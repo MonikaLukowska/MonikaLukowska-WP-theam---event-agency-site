@@ -1,0 +1,65 @@
+@import "../base/_mixins";
+
+.counter-section {
+    max-width: 65rem;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+
+    @mixin atSmall{
+        flex-direction:row;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+
+    @mixin atLarge{
+        justify-content:space-around;
+       flex-wrap:nowrap;
+    }
+
+    &__block {
+        margin: 1em;
+        text-align: center;
+
+
+        @mixin atSmall{
+           width:40%;
+        
+           
+        }
+
+        @mixin atMedium{
+            margin: 0;
+            width:24%;
+           
+        }
+
+        &>span {
+            display: block;
+        }
+    }
+
+    &__count {
+        margin-bottom: 0;
+        font-family: "Archivo-Bold", sans-serif;
+        font-size: 4rem;
+        color: $mainBlue;
+
+        @mixin atLarge{
+            font-size:4.62rem;
+        }
+
+    }
+
+    &__desc {
+        font-family: "Archivo-Regular", sans-serif;
+        font-size: 0.8rem;
+
+        @mixin atMedium{
+            font-size: 1rem;
+        }
+    }
+
+}

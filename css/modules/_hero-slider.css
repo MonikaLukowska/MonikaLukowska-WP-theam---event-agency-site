@@ -1,0 +1,105 @@
+.hero-slider {
+    position: relative;
+  
+    
+
+   &__container{
+      position:relative;
+    }
+
+    &__slide {
+        background-size: cover;
+        background-position:center;
+        background-repeat: no-repeat;
+        padding:0;
+        height:55vh;
+        
+       /*@mixin atMedium{
+            height:30rem;
+        }
+        @mixin atLarge{
+            height:40rem;
+        }*/
+
+        &--1{
+           background-image: url('./images/baloons_small.png');
+
+           @mixin atMedium{
+              background-image: url('./images/baloons.png'); 
+           } 
+        }
+
+        &--2{
+            background-image: url('./images/concert_mobile.png');
+
+
+            @mixin atMedium{
+              background-image: url('./images/concert.png');  
+            }
+        }
+
+        &--3{
+            background-image: url('./images/creative_mind_mobile.png');
+
+            @mixin atMedium{
+                background-image: url('./images/creative_mind.png');
+            }
+        }
+    }
+
+    &__text-content{
+        position:relative;
+        top:50%;
+        transform:translateY(-50%);
+        max-width:70rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+   
+    &__overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(#E6E6E6, .1);
+    margin:0;
+    padding:0;
+
+    }
+    
+    .slide-interior-container{
+        height:100%;
+    }
+    .slick-dots {
+    position:absolute;
+    top:50%;
+    left:98%;
+    transform: translateY(-50%);
+	margin: 0;
+	padding: 1rem 0;
+	
+	list-style-type: none;
+	
+		li {
+			margin: 0.25rem;
+		}
+	
+		button {
+			display: block;
+			width: 0.7rem;
+			height: 0.7rem;
+			padding: 0;
+			
+			border: 1px solid #191C40;
+			border-radius: 100%;
+			background-color: rgba(#E6E6E6, .1);
+			
+			text-indent: -9999px;
+		}
+	
+		li.slick-active button {
+			background-color: #191C40;
+		}
+	
+}
+
+}

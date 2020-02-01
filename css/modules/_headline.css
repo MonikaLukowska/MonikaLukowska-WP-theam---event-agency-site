@@ -1,0 +1,109 @@
+@import "../base/_mixins";
+
+.headline{
+  font-family: 'Playfair Display-Bold';
+  line-height:1.2;
+  z-index:10;
+  text-align:center;
+  
+
+
+    &--large {
+      font-size: 2.6rem;
+      margin:0;
+     
+    
+      @mixin atSmall {
+        font-size: 3.5rem;
+      }
+
+      @mixin atMedium{
+        font-size:5rem;
+         margin:0 0.5em;
+      }
+
+      @mixin atLarge{
+        font-size: 6.50rem;   
+    }
+    }
+
+    &--medium{
+      font-size: 2.7rem;
+      padding: 0 0.2em;
+     
+      @mixin atSmall {
+         padding:0 1em;
+        font-size: 3.4rem;
+      }
+      @mixin atMedium {
+        font-size: 4rem;
+      }
+      @mixin atLarge{
+        font-size: 4.875rem;
+      }
+    }
+
+    &--about{
+      margin-bottom:0;
+    }
+
+    &--small {
+      font-size:3rem;
+      margin:0;
+      
+    
+
+      @mixin atSmall{
+        font-size:3.3275rem;
+      }
+
+      @mixin atMedium{ 
+        text-align:left;
+        margin:4rem 0;
+      }
+    }
+    &--overlap{
+      margin:0 1em;
+
+      @mixin atMedium{
+      margin:0;
+      width:100%;
+      position:absolute;
+      top:0;
+      left:50%;
+      transform:translate(-50%,-50%);
+      }
+     
+    }
+
+    &--logo-container{
+      margin:1em 1.5em;
+      
+      @mixin atMedium{
+        display:none;
+      }
+    }
+
+    &--subtitle{
+      max-width:70%;
+      margin: 2em auto 2em;
+      font-family:"Archivo-SemiBold";
+      text-transform:uppercase;
+      font-size:0.9rem;
+
+        @mixin atSmall{
+          max-width:35rem;
+         padding:0 1em;
+         font-size:1.1rem;
+        }
+
+        @mixin atMedium{
+           margin: 2em auto 3em;
+          font-size:1.5rem;
+        }
+
+        @mixin atLarge{
+          font-size:1.625rem;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+.btn {
+    background-color: $mainYellow;
+    text-decoration: none;
+    padding: 1em 1.5em;
+    display: inline-block;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    font-size:0.9rem;
+    font-weight: 500;
+    font-family: 'Archivo-Bold', sans-serif;
+    border-style: none;
+    cursor:pointer;
+
+    &:after {
+        padding: 10px;
+        content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+        text-decoration: line-through;
+    }
+
+    @mixin atMedium {
+        padding: 1.1rem 1.7rem;
+        font-size: 1.11rem;
+    }
+
+    &--overlap {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+
+    }
+
+    &--half-radius {
+        border-radius:2rem;
+        width:100%;
+        margin:0 auto;
+
+        @mixin atMedium{
+        border-radius: 0 2rem 2rem 0;
+        width:100%;
+        }
+    }
+
+    &--up{
+        display:none;
+        
+        @mixin atMedium{
+        display:block;
+        position:absolute;
+        bottom:30px;
+        right:30px;
+        width:4.3em;
+        height:4.3em;
+        margin-bottom:1.5em;
+        border-radius:50%;
+        margin-bottom:0;
+        }
+
+        &:after {
+        padding: 0;
+        content: "";
+        text-decoration: none;
+    }
+    }
+}

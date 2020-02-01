@@ -1,0 +1,145 @@
+.quotes {
+    position:relative;
+    max-width:40rem;
+    display: flex;
+    padding: 0 2em;
+    justify-content: center;
+    align-content: center;
+    letter-spacing: 1px;
+
+    @mixin atSmall{
+        padding: 2.5em 5em 4em 5em;
+    }
+    @mixin atMedium{
+        margin:0 3em 0 1.3em;
+        padding: 1em 0;
+    }
+
+    @mixin atLarge{
+        width:70%;
+        margin:0 3em 0 1.3em;
+        padding: 1em 0;
+    }
+
+    &__quotation {
+        padding-top:1em;
+        position:absolute;
+        top:0%;
+        left:5%;
+
+
+        >img{
+            width:50%;
+        }
+
+        @mixin atMedium{
+            left:0;
+
+            >img{
+                width:70%;
+            }
+        }
+
+        @mixin atLarge{
+            >img{
+                width:80%;
+            }
+        }
+
+
+
+    }
+
+    &__content {
+        align-self: center;
+        padding-left:2em;
+        line-height:1.5;
+        @mixin atMedium{
+            padding-left:3.5em;
+            line-height:2;
+        }
+
+        @mixin atLarge{
+            padding-left:4em;
+        }
+
+    }
+
+    &__text-content {
+        align-self: center;
+        margin:0;
+    }
+
+
+    &__author {
+        margin-right: 30%;
+        border-bottom: 2px black solid;
+        line-height: 400%;
+
+    }
+
+    &__author--center {
+        letter-spacing: 2px;
+        font-family: "PlayfairDisplay-Regular";
+        font-size: 1.251rem
+    }
+
+    &--column { 
+        height:100%;
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin:0 auto; 
+        text-align: center;
+
+        .quotes__quotation {
+        padding-top:0;
+        padding-bottom:15px;
+        position:absolute;
+        top:5%;;
+        left:55%;
+        transform:translateX(-50%);
+
+        @mixin atSmall{
+            top:10%;
+        }
+
+        @mixin atMedium{
+            top:15%;
+            left:50%;
+        }
+
+
+        >img{
+            width:50%;
+        }
+
+        @mixin atMedium{
+
+            >img{
+                width:70%;
+            }
+        }
+
+        @mixin atLarge{
+            >img{
+                width:80%;
+            }
+        }
+        }
+
+    }
+
+
+
+    &--column::after {
+        display: block;
+        content: "";
+        margin: 0 auto;
+        width: 15%;
+        height: 5px;
+        background-color: $mainYellow;
+
+    }
+}

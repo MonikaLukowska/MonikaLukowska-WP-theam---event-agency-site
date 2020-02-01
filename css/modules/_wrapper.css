@@ -1,0 +1,40 @@
+.wrapper {
+    max-width: 19.2rem;
+    padding: 0 1em;
+    margin: 0 auto;
+    text-align: center;
+    height: auto;
+
+    @mixin atSmall {
+        max-width: 55rem;
+        padding: 0 2.5em;
+    }
+
+    @mixin atMedium {
+        max-width: 70rem;
+
+    }
+
+
+    &--nav {
+        max-width: 100%;
+        padding: 0;
+
+        @mixin atMedium {
+            max-width: 100rem;
+            padding: 0 1em;
+        }
+
+    }
+
+    &--wider {
+
+        @mixin atMedium {
+            max-width: 86rem;
+            padding: 0;
+        }
+
+    }
+
+
+}

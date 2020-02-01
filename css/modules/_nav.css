@@ -1,0 +1,171 @@
+.navigation {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  height: calc(100vh - 3.1rem);
+  width: 100%;
+  margin: 3.1rem 0;
+  background-color: #fff;
+
+
+  @mixin atMedium {
+    display: flex;
+    flex: 0 1 33%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    height: auto;
+    width: auto;
+    margin: auto;
+    background-color: none;
+
+  }
+
+  @mixin atLarge {
+    justify-content: space-around;
+    font-size: 18px;
+
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+
+    @mixin atMedium {
+      flex-direction: row;
+      flex: 0 1 30%;
+      margin-top: 1em;
+    }
+  }
+
+
+
+
+
+  li {
+    width: 80%;
+    list-style: none;
+    margin: 0 auto;
+    border-bottom: 2px solid #ddd;
+
+    @mixin atMedium {
+      width: 100%;
+      margin: 0 10px;
+      border-style: none;
+      text-align: right;
+
+      &.current-menu-item {
+        border-bottom: 3px solid $mainBlue;
+      }
+
+
+    }
+  }
+
+
+  a {
+    font-weight: 300;
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 12px 0;
+    text-align: left;
+
+  }
+
+  a:nth-last-child(1) {
+    border-style: none;
+  }
+
+  &__left {
+    @mixin atMedium {
+      justify-content: flex-end;
+      align-content: center;
+
+      >li {
+        max-width: 130px;
+
+        >a {
+          text-align: center;
+        }
+
+      }
+    }
+  }
+
+  &__right {
+    @mixin atLarge {
+      justify-content: space-between;
+
+      >li {
+        margin-right: 3rem;
+
+        >a {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    display: none;
+
+    @mixin atMedium {
+      display: block;
+      max-width: 250px;
+      flex: 0 1 40%;
+    }
+  }
+
+
+
+  &--footer {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2em;
+    font-size: 0.87rem;
+    width: auto;
+
+
+
+    @mixin atMedium {
+      margin-top: 0;
+      padding: 0;
+    }
+
+    ul {
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+
+      &>li {
+        border-style: none;
+        text-align: left;
+
+        @mixin atMedium {
+
+          &.current-menu-item {
+            border-style: none;
+            color: #444;
+          }
+        }
+      }
+
+      @mixin atMedium {
+        align-items: flex-start;
+      }
+    }
+
+    a {
+      padding: 0;
+      line-height: 2.5;
+      letter-spacing: 1.3px;
+      color: #A0A0A0;
+
+    }
+  }
+}

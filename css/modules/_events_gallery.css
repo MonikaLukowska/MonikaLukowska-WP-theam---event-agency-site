@@ -1,0 +1,275 @@
+.gallery {
+  margin-top: 2em;
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 230px;
+  grid-row-gap: 5px;
+  overflow: hidden;
+
+
+
+
+  @mixin atSmall {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: 280px;
+  }
+
+  @mixin atMedium {
+
+    grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+    grid-auto-rows: 330px;
+    grid-gap: 5px;
+    grid-auto-flow: dense;
+
+
+
+    &__event:nth-child(1) {
+      grid-column-end: span 2;
+      grid-row-end: span 2;
+
+    }
+
+    &__event:nth-child(2) {
+      grid-column-end: span 2;
+
+    }
+
+  }
+
+
+  &__event {
+    overflow: hidden;
+    position: relative;
+
+    figure:hover .overlay {
+      opacity: 1;
+      transition: all 1s;
+    }
+
+
+
+    >figure {
+      margin: 0;
+
+
+      >img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+      }
+
+      >.overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(#FFE87E, 0.6);
+
+        z-index: 10;
+
+        >figcaption>p {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-transform: uppercase;
+          color: #191C40;
+
+        }
+      }
+
+    }
+
+
+  }
+
+  &--singiel {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-rows: 280px;
+    overflow: hidden;
+
+
+    @mixin atSmall {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-auto-rows: 320px;
+
+    }
+
+    @mixin atMedium {
+
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      grid-auto-rows: 380px;
+      grid-gap: 5px;
+      grid-auto-flow: dense;
+    }
+
+    >a {
+      overflow: hidden;
+      position: relative;
+
+      >img {
+        min-width: 100%;
+        min-height: 100%;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+      }
+
+    }
+
+
+
+
+    /*display:block;
+      width:100%;
+      
+      @mixin atMedium{
+
+        >p{
+       
+        line-height: 0;
+   
+  -webkit-column-count: 3;
+  -webkit-column-gap:   5px;
+  -moz-column-count:    3;
+  -moz-column-gap:      5px;
+  column-count:       3;
+  column-gap:           5px; 
+
+          >img.alignnone{
+           width: 100% !important;
+  height: auto !important;
+          }
+        }
+         
+  }*/
+  }
+
+}
+
+#lightbox.lightbox {
+  position:fixed;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+}
+
+.lightboxOverlay {
+  opacity: 0.96;
+  max-width: 100vw !important;
+  
+}
+
+.lb-container {
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+  max-width: 1050px;
+  max-height: 730px;
+  margin: 0 auto;
+
+  >img {
+    max-height: 730px !important;
+  }
+}
+
+.lb-outerContainer {
+  background-color: transparent;
+}
+
+
+
+.lb-nav a.lb-next {
+  position: absolute;
+  width: 50%;
+
+  opacity: 1;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+
+
+  @mixin atMedium {
+    max-height: 38px;
+    max-width: 52px;
+    top: 50%;
+    left: calc(100% + 10px);
+    background: url("./images/next.png");
+    background-repeat: no-repeat;
+  }
+
+
+}
+
+.lb-nav a.lb-prev {
+  position: absolute;
+  width: 50%;
+  opacity: 1;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  @mixin atMedium {
+    max-height: 38px;
+    max-width: 52px;
+    left: -10px;
+    margin-right: 15px;
+    top: 50%;
+    transform: translateX(-100%);
+    background: url("./images/prev.png");
+    background-repeat: no-repeat;
+
+  }
+
+}
+
+.lb-dataContainer {
+  position: relative;
+  height: 100%;
+
+  .lb-data {
+    width: 100%;
+  }
+}
+
+.lb-details {
+  text-transform: uppercase;
+
+
+  .lb-caption {
+    line-height: 2;
+    position: absolute;
+    left: 0;
+  }
+
+  .lb-number {
+    position: absolute;
+    right: 0;
+  }
+
+
+}
+
+/*.lb-data .lb-close {
+  background: url("./images/close.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -100%;
+  right: 0;
+  transform: translateY(-100%);
+}*/

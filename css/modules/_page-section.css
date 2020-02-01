@@ -1,0 +1,117 @@
+.page-section {
+    margin: 3rem 0 1rem;
+    overflow: hidden;
+    height: 100%;
+    padding-bottom: 2rem;
+
+    @mixin atMedium {
+        margin: 3rem 0;
+        padding-bottom: 4.9rem;
+    }
+
+
+    &--header {
+
+        padding: 0;
+        border-bottom: solid 2px #ddd;
+
+        @mixin atMedium {
+            margin: 0 0 1.5rem 0;
+        }
+    }
+
+    &--sm-nopadding {
+        padding-bottom: 0;
+    }
+
+    &--border {
+        border-bottom: solid 2px #ddd;
+    }
+
+    &--medium-6 {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        &>div {
+            height: 50vh;
+        }
+
+        &>picture {
+            height: 45vh;
+
+            >img {
+                width: 100%;
+                height: 100%
+            }
+        }
+
+        @mixin atMedium {
+            max-height: 28.93rem;
+            flex-direction: row;
+        }
+
+        &>div,
+        picture {
+
+
+            @mixin atMedium {
+                height: auto;
+                max-height: 28.93rem;
+                flex-basis: 50%;
+                overflow: hidden;
+            }
+
+            &>img {
+                height: 100%;
+                width: 100%;
+            }
+
+        }
+    }
+
+    &__yellow-col {
+        display: flex;
+        background-color: #FFE671;
+        justify-content: center;
+
+    }
+
+    &--gradient-bgc {
+        background-image: linear-gradient(to bottom,
+                $mainGreen 50%,
+                #fff 50%);
+    }
+
+    &--green {
+        background: $mainBlue;
+        min-height: 100vh;
+        position: relative;
+
+
+        @mixin atMedium {
+            min-height: auto;
+            height: 28.8rem;
+            width: 100vw;
+
+            &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./images/overlay.png');
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-position:center;
+            z-index:0;
+        }
+        }
+
+        
+    }
+
+}

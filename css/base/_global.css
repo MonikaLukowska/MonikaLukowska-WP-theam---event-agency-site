@@ -1,0 +1,84 @@
+@import "../base/_mixins";
+
+* {
+    box-sizing: border-box;
+}
+.root{
+    max-width:100%vw;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'Archivo-Regular', sans-serif;
+    line-height: 2;
+    color: #191C40;
+    font-size:0.9rem;
+
+
+     @mixin atSmall{
+        font-size:1rem;
+    }
+    @mixin atMedium{
+       font-size:1.1rem; 
+    }
+
+    @mixin atLarge{
+        font-size: 1.3125rem;
+    }
+
+}
+.page-content{
+    max-width:1804px;
+    margin:0 auto;
+}
+
+
+@font-face {
+    font-family: "Archivo-Bold";
+    src: url("/fonts/Archivo/Archivo-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Archivo-Regular";
+    src: url("/fonts/Archivo/Archivo-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Archivo-SemiBold";
+    src: url("/fonts/Archivo/Archivo-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "PlayfairDisplay-Regular";
+    src: url("/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Playfair Display-Bold";
+    src: url("/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf");
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block
+}
+
+.white{
+    color:#fff;
+}
+a{
+    display:block;
+    margin:0;
+    padding:0;
+    >figure{
+        margin:0;
+    }
+}
+
+a:link{
+    color: #191C40;
+}
+a:visited{
+    color: #191C40;
+}

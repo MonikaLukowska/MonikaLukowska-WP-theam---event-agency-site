@@ -1,0 +1,42 @@
+.paragraph-block {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-bottom: 1em;
+    justify-content: center;
+
+
+
+    &__content {
+        width: 65%;
+        margin-top: -1em;
+        margin-left: 1.3em;
+        text-align: left;
+        line-height: 2.1;
+
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            margin: 0;
+            background-color: #191C40;
+            width: 30px;
+
+            @mixin atSmall {
+                width: 50px;
+
+            }
+
+            @mixin atMedium {
+                width: 60px;
+
+            }
+        }
+    }
+
+
+}
