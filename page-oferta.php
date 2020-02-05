@@ -10,16 +10,13 @@ get_header();
 
 		<?php while ( have_posts() ) : the_post(); ?>
         
-        <div class="banner">
-        <picture>
-            <source  media="(min-width: 900px)" srcset="<?php the_field('banner'); ?>">
-            <img src="<?php the_field('banner_mobile'); ?>" >
-         </picture>
-        </div>
+      <?php 
+      pageBanner();
+      ?>
      
         <div class="page-section page-section--border">
-        <h2 class="headline headline--medium"><?php the_field('title') ?></h2>
-        <?php print_r(the_field('page-title'))?>
+        <h2 class="headline headline--medium"><?php the_field('page-title') ?></h2>
+       
         <?php endwhile; // end of the loop. ?>
         <?php
          
@@ -44,7 +41,7 @@ get_header();
                             <div class="paragraph-block">
                                 <p class="paragraph-block__content"><?php echo $paragraph1 ?></p>
                             </div>
-                            <?php print_r($block['paragraph'])?>
+                            
                             <div class="paragraph-block">
                  
                                 <p class="paragraph-block__content"><?php echo $paragraph2?></p>
@@ -54,7 +51,7 @@ get_header();
                                 <p class="paragraph-block__content"><?php echo $paragraph3 ?></p>
                             </div>
                             </div>
-                            <div class="image-text-block-section_block__img"><img src=<?php echo $image1 ?> alt=""></div>
+                            <div class="image-text-block-section_block__img"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div>
                     </div>
                             <?php endwhile; // end of the loop. ?>
                             <?php endif; // end of the loop. ?>
@@ -69,7 +66,7 @@ get_header();
            $header= get_sub_field('header');
             ?>
         <div class="image-text-block-section__block">
-        <div class="image-text-block-section_block__img image-text-block-section__block__img--none-sm"><img src=<?php echo $image1 ?> alt=""></div>
+        <div class="image-text-block-section_block__img image-text-block-section__block__img--none-sm"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div>
           <div class="image-text-block-section__block__content">
                             <div class="feature-block feature-block--offer">
                                 <img src="<?php echo $header['icon'] ?>" alt="ikona o nas2">
@@ -87,7 +84,7 @@ get_header();
                                 <p class="paragraph-block__content"><?php echo $paragraph3 ?></p>
                             </div>  
                             </div>
-          <div class="image-text-block-section_block__img image-text-block-section__block__img--none-md"><img src=<?php echo $image1 ?> alt=""></div> 
+          <div class="image-text-block-section_block__img image-text-block-section__block__img--none-md"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div> 
          </div>
                             <?php endwhile; // end of the loop. ?>
                             <?php endif; // end of the loop. ?>
@@ -121,37 +118,17 @@ get_header();
                                 <p class="paragraph-block__content"><?php echo $paragraph3 ?></p>
                             </div>
                             </div>
-                            <div class="image-text-block-section_block__img"><img src=<?php echo $image1 ?> alt=""></div>
+                            <div class="image-text-block-section_block__img"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div>
                     </div>
                     </div>
                             <?php endwhile; // end of the loop. ?>
                             <?php endif; // end of the loop. ?>
                 </div>
                 </div>
-                <div class="wrapper wrapper--wider">
-                <h2 class="headline headline--medium">Nasze realizacje</h2>
-                <div class="portfolio__bottom">
-                    <div class="portfolio__carousel">
-       
-                            <?php
-                    $eventCarousel = new WP_Query(array(
-                        'posts_per_page' => 6,
-                        'post_type' => 'Event'
-                    ));
+        <div class="page-section">
 
-                    while ($eventCarousel->have_posts()) {
-                        $eventCarousel->the_post(); ?>
-                                    <figure class="portfolio__carousel__slide">
-                    <img class="lazyload" src-data="<?php echo get_the_post_thumbnail(); ?>
-                    <a class="overlay" href="<?php the_permalink(); ?> "/>
-                    <figcaption class="overlay"><p><?php the_title(); ?></p></figcaption>
-                    </a>
-                    </figure>
-                    
-                                    <?php } wp_reset_postdata();
-                    ?>
-                </div>
-                <a class="btn" href="<?php echo site_url('/portfolio') ?>">zobacz więcej</a>
-                </div>
-                </div>
+    <?php
+        portfolioCarousel();
+        ?>
+        </div>
 <?php get_footer(); ?>

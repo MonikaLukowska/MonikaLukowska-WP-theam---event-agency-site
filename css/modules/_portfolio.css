@@ -2,124 +2,129 @@
 
 
 
-    &__text-content {
-        padding-bottom: 4em;
+  &__text-content {
+    padding-bottom: 4em;
+  }
+
+  &__carousel {
+    max-width: 90%;
+    margin: 0 auto;
+    margin-bottom: 5.18em;
+    max-height: 26.625rem;
+
+    .slick-slide {
+      margin: 0 1em;
     }
 
-    &__carousel {
-        /*display: flex;
-        justify-content: space-between;
-        flex: 0 1 30%;*/
-        margin-bottom: 5.18em;
-        max-height: 26.625rem;
+    .fa-chevron-left {
+      position: absolute;
+      top: 50%;
+      left: -40px;
+      padding-left: 1em;
 
-        .slick-slide{
-            margin:0 1em;
-        }
-        
-        .fa-chevron-left{
-        position:absolute;
-        top:50%;
-        left: -40px;
-        padding-left:1em;
-       
 
-          &:hover{
-            cursor:pointer;
-          }
-        }
-        .fa-chevron-right{
-        position:absolute;
-        top:50%;
-        right: -40px;
-        padding-right: 1em;
-        
-        
-          &:hover{
-            cursor:pointer;
-            }
-        }
-        .slick-dots {
-    position:absolute;
-    display:flex;
-    bottom:-15%;
-    left:50%;
-    transform: translatex(-50%);
-	margin: 0;
-	padding: 1rem 0;
-	
-	list-style-type: none;
-	
-		li {
-			margin: 0.25rem;
-		}
-	
-		button {
-			display: block;
-			width: 0.7rem;
-			height: 0.7rem;
-			padding: 0;
-			
-			border: 1px solid #191C40;
-			border-radius: 100%;
-			background-color: rgba(#E6E6E6, .1);
-			
-			text-indent: -9999px;
-		}
-	
-		li.slick-active button {
-			background-color: #191C40;
-		}
-	
-}
+      &:hover {
+        cursor: pointer;
+      }
     }
 
-    &__carousel__slide {
-        max-height: 26.625rem;
-        overflow:hidden;
-        position:relative;
-        margin:0;
-       
-      &:hover .overlay{
-            opacity:1;
-            transition: all 1s;
-        }
-           
-         
+    .fa-chevron-right {
+      position: absolute;
+      top: 50%;
+      right: -40px;
+      padding-right: 1em;
 
-            >img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            display:block;
-            }
 
-            >.overlay{
-            position:absolute;
-            top:0;
-            left:0;
-            opacity:0;
-            height:100%;
-            width:100%;   
-            background-color:rgba(#FFE87E, 0.6);
-            
-            z-index:10;
-
-              >figcaption >p{
-                position:absolute;
-                top:50%;
-                left:50%;
-                transform:translate(-50%,-50%);
-                text-transform:uppercase;
-                color:#191C40;
-
-               }  
-            }
-            
-        }
-
-    &__bottom{
-        max-width:66rem;
-        margin: 0 auto 3rem auto;
+      &:hover {
+        cursor: pointer;
+      }
     }
+
+    .slick-dots {
+      position: absolute;
+      display: flex;
+      bottom: -15%;
+      left: 50%;
+      transform: translatex(-50%);
+      margin: 0;
+      padding: 1rem 0;
+
+      list-style-type: none;
+
+      li {
+        margin: 0.25rem;
+      }
+
+      button {
+        display: block;
+        width: 0.7rem;
+        height: 0.7rem;
+        padding: 0;
+
+        border: 1px solid #191C40;
+        border-radius: 100%;
+        background-color: rgba(#E6E6E6, .1);
+
+        text-indent: -9999px;
+      }
+
+      li.slick-active button {
+        background-color: #191C40;
+      }
+
+    }
+  }
+
+  &__carousel__slide {
+    height: 17rem;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+
+    @mixin atSmall {
+      height: 18rem;
+    }
+
+    &:hover .overlay {
+      opacity: 1;
+      transition: all 1s;
+    }
+
+
+
+    >img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    >.overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(#FFE87E, 0.6);
+
+      z-index: 10;
+
+      >figcaption>p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        color: #191C40;
+
+      }
+    }
+
+  }
+
+  &__bottom {
+    max-width: 66rem;
+    margin: 0 auto;
+  }
 }

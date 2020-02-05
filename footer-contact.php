@@ -2,7 +2,7 @@
         <div class="footer footer__lower">
             <div class="page-content">
             <div class="row row--medium-4 row--start">
-                <div class="footer__logo"><img src="images/studio_logo_sm.png" alt="logo studio mb"></div>
+                <div class="footer__logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/studio_logo_sm.png" alt="logo studio mb"></div>
                 <div class="footer__addres">
                     <p>Studio MP<br> ul. Gdańska 27, I piętro<br>85-005 Bydgoszcz<br>biuro@studiomb.pl</p>
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -16,7 +16,7 @@
                         <li <?php if(is_page('kontakt')) echo'class="current-menu-item"'?>><a href="<?php echo site_url('/kontakt'); ?>">kontakt</a></li>
                     </ul>
                 </nav>
-                <button class="btn btn--up"><img src="images/ARROW UP.png" /></button>
+                <button class="btn btn--up"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/ARROW UP.png" /></button>
             </div>
           </div>
         </div>

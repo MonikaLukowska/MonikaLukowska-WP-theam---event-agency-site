@@ -2,7 +2,7 @@
 
 while(have_posts()){
     the_post();?>
-<div class="page-section">
+<div class="page-section page-section--padding-top">
 
 <h2 class="headline headline--medium"><?php the_title(); ?></h2>
 <div class="gallery gallery--singiel">

@@ -1,4 +1,5 @@
 <footer>
+<div class="page-section page-section--border">
         <div class="footer footer__upper">
             <div class="row row--medium-4">
                 <h3 class="headline headline--small">Masz pytania?</h3>
@@ -8,6 +9,7 @@
                     <button type="submit" class="btn btn--half-radius">Wyślij</button>
                 </form>
             </div>
+        </div>
         </div>
         <div class="footer footer__lower">
             <div class="row row--medium-4 row--start">

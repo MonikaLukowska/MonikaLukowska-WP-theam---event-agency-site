@@ -10,13 +10,14 @@ import PortfolioCarousel from './modules/PortfolioCarousel';
 //import {Map} from './modules/Map'
 
 if(module.hot) {
-    module.hot.accept()
+    module.hot.accept();
 }
 
 const mobileMenu = new MobileMenu();
 const heroSlider = new HeroSlider();
 const testimonialsSlider = new TestimonialsSlider();
 const portfolioCarousel = new PortfolioCarousel();
+const topButton = new TopButton();
 
 lightbox.option({
     'albumLabel': "Zdjęcie %1 z %2"

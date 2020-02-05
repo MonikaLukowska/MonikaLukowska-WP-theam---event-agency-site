@@ -28,34 +28,43 @@ body {
 
 }
 .page-content{
+width:100%;
+
+    @mixin atLarge{
     max-width:1804px;
     margin:0 auto;
+    }
 }
 
 
 @font-face {
     font-family: "Archivo-Bold";
-    src: url("/fonts/Archivo/Archivo-Bold.ttf");
+    src: url("fonts/Archivo/Archivo-Bold.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Archivo-Regular";
-    src: url("/fonts/Archivo/Archivo-Regular.ttf");
+    src: url("fonts/Archivo/Archivo-Regular.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Archivo-SemiBold";
-    src: url("/fonts/Archivo/Archivo-SemiBold.ttf");
+    src: url("fonts/Archivo/Archivo-SemiBold.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "PlayfairDisplay-Regular";
-    src: url("/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf");
+    src: url("fonts/Playfair_Display/PlayfairDisplay-Regular.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Playfair Display-Bold";
-    src: url("/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf");
+    src: url("fonts/Playfair_Display/PlayfairDisplay-Bold.ttf");
+    font-display: swap;
 }
 
 img {

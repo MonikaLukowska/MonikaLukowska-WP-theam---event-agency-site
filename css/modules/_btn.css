@@ -31,13 +31,14 @@
     }
 
     &--half-radius {
+        padding: 1em 1.5em;
         border-radius:2rem;
         width:100%;
         margin:0 auto;
 
-        @mixin atMedium{
+        @mixin atLarge{
         border-radius: 0 2rem 2rem 0;
-        width:100%;
+        width:50%;
         }
     }
 

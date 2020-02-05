@@ -73,7 +73,9 @@
     color: black;
     display: block;
     padding: 12px 0;
-    text-align: left;
+    text-align: center;
+
+
 
   }
 
@@ -89,9 +91,6 @@
       >li {
         max-width: 130px;
 
-        >a {
-          text-align: center;
-        }
 
       }
     }
@@ -103,10 +102,8 @@
 
       >li {
         margin-right: 3rem;
+        text-align: center;
 
-        >a {
-          text-align: left;
-        }
       }
     }
   }

@@ -10,11 +10,15 @@
         align-items:center;
         align-content:center;
 
-    
+    @mixin atSmall{
+      padding: 4rem 0;
+      min-height:auto;
+      max-height:800px;
+    }
 
     @mixin atMedium{
       padding:0 1.25em;
-      min-height:auto;
+      
     }
   }
 
@@ -25,17 +29,23 @@
     justify-content:space-between;
 
       @mixin atSmall{
-        width:80%;
+        max-width:80%;
       }
    
 
-      & input{
+      &>input{
         text-align:center;
+     
       }
     
 
-    @mixin atMedium{
+    @mixin atLarge{
       flex-direction:row;
+
+       &>input{
+        text-align:center;
+       width:50%;
+      }
     }
   }
 
@@ -49,13 +59,19 @@
     font-family: "Archivo-Regular", sans-serif;
     letter-spacing:1.5px;
     text-transform: uppercase;
-    font-size:1rem;
+    font-size:0.9rem;
 
-    @mixin atMedium{
-    border-radius: 2rem 0 0 2rem;
-    padding: 0 0 0 2.5em;
-    margin-bottom:0;
-    }
+      
+       @mixin atMedium{
+       font-size:1.11rem; 
+      }
+
+        @mixin atLarge{
+          border-radius: 2rem 0 0 2rem;
+          padding: 0 0 0 2.5em;
+          margin-bottom:0;
+     
+        }
   }
   &__logo{
     display:none;

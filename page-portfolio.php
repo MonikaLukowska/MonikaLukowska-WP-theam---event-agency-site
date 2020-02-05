@@ -8,7 +8,7 @@
 
 get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
-
+<div class="page-section page-section--padding-top">
 <h2 class="headline headline--medium"><?php the_field('page_title') ?></h2>
 
    <div class="wrapper">
@@ -25,7 +25,7 @@ get_header(); ?>
             $eventCarousel->the_post(); ?>
  <div class="gallery__event">
          <figure>
-          <img src="<?php echo get_the_post_thumbnail(); ?>" alt="" />
+          <?php echo get_the_post_thumbnail(); ?>
           <a class="overlay" href="<?php the_permalink(); ?>"> 
           <figcaption class="overlay"><p><?php the_title(); ?></p></figcaption>
            </a>
@@ -36,7 +36,7 @@ get_header(); ?>
    ?>
   
    </div>
-
+</div>
    <div class="page-section">
      <div class="wrapper">
    <?php 
@@ -120,29 +120,8 @@ get_header(); ?>
       <?php endif ?>
      </div>
      <div class="page-section">
-        <?php 
-        if (have_rows('logotypes_section')) :
-          while(have_rows('logotypes_section')) :the_row();
-          $title = get_sub_field('title');
-          $logos = get_sub_field('logotypes');
-
-        ?>
-
-     <h5 class="headline headline--subtitle"><?php echo $title ?></h5>
-     
-     <?php if($logos): ?>
-     <div class="testimonials__logo-container">
-     <?php foreach ($logos as $logo) : ?>
-        <li class="testimonials__logo-item"><img src="<?php echo $logo ?>" /></li>
-        <?php endforeach; ?>
-        </div>
-        <?php endif ?>
-     <?php endwhile  ?>
-     <?php endif ?>
-  
-   </div>
-
-   
+     <?php get_template_part('template-parts/content', 'logotypes');?>
+     </div>
 
     <?php get_footer();
 

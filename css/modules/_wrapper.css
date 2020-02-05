@@ -1,13 +1,12 @@
 .wrapper {
     max-width: 19.2rem;
-    padding: 0 1em;
     margin: 0 auto;
     text-align: center;
     height: auto;
 
     @mixin atSmall {
         max-width: 55rem;
-        padding: 0 2.5em;
+    
     }
 
     @mixin atMedium {
@@ -22,7 +21,7 @@
 
         @mixin atMedium {
             max-width: 100rem;
-            padding: 0 1em;
+       
         }
 
     }

@@ -22,7 +22,7 @@
        @mixin atMedium{
            display:block;
            font-size:1.3rem;
-           padding: 0 1.5em;
+           text-align:center;
            
        }
 
