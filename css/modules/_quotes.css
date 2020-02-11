@@ -1,45 +1,46 @@
 .quotes {
-    position:relative;
-    max-width:40rem;
+    position: relative;
+    max-width: 40rem;
     display: flex;
     padding: 0 2em;
     justify-content: center;
     align-content: center;
     letter-spacing: 1px;
 
-    @mixin atSmall{
+    @mixin atSmall {
         padding: 2.5em 5em 4em 5em;
     }
-    @mixin atMedium{
-        margin:0 3em 0 1.3em;
+
+    @mixin atMedium {
+        margin: 0 3em 0 1.3em;
         padding: 1em 0;
     }
 
-    @mixin atLarge{
-        width:70%;
-        margin:0 3em 0 1.3em;
+    @mixin atLarge {
+        width: 70%;
+        margin: 0 3em 0 1.3em;
         padding: 1em 0;
     }
 
     &__quotation {
-        padding-top:1em;
-        position:absolute;
-        top:0%;
-        left:5%;
+        padding-top: 1em;
+        position: absolute;
+        top: 0%;
+        left: 5%;
 
 
-        >img{
-            margin:0 auto;
-            width:50%;
+        >img {
+            margin: 0 auto;
+            width: 50%;
 
-            @mixin atMedium{
-                height:90px;
-                width:40px;
+            @mixin atMedium {
+                height: 90px;
+                width: 40px;
             }
         }
 
-        @mixin atMedium{
-            left:0;
+        @mixin atMedium {
+            left: 0;
 
         }
 
@@ -51,22 +52,23 @@
 
     &__content {
         align-self: center;
-        padding-left:2em;
-        line-height:1.5;
-        @mixin atMedium{
-            padding-left:3.5em;
-            line-height:2;
+        padding-left: 2em;
+        line-height: 1.5;
+
+        @mixin atMedium {
+            padding-left: 3.5em;
+            line-height: 2;
         }
 
-        @mixin atLarge{
-            padding-left:4em;
+        @mixin atLarge {
+            padding-left: 4em;
         }
 
     }
 
     &__text-content {
         align-self: center;
-        margin:0;
+        margin: 0;
     }
 
 
@@ -78,80 +80,83 @@
     }
 
     &__author--center {
-        margin:2em 0 1em;
+        margin: 1em 0 1em;
         letter-spacing: 2px;
         font-family: "PlayfairDisplay-Regular";
         font-size: 1.151rem;
 
-         &:after {
-        position: absolute;
-        left:50%;
-        transform:translateX(-50%);
-        margin-top:1em;
-        display: block;
-        content: "";
-        width: 17%;
-        height: 5px;
-        background-color: $mainYellow;
+        &:after {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 1em 0;
+            display: block;
+            content: "";
+            width: 17%;
+            height: 5px;
+            background-color: $mainYellow;
 
-    }
+        }
 
-        @mixin atMedium{
+        @mixin atMedium {
             font-size: 1.251rem;
         }
     }
 
     &--column {
-        width:100%;
+        padding: 10px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin:0 auto; 
+        align-items: center;
+        margin: 0 auto;
         text-align: center;
-       
-       
 
-        .quotes__text-content{
-            margin-top:25%;
+
+
+        .quotes__text-content {
+            margin-top: 25%;
         }
 
 
         .quotes__quotation {
-        position:absolute;
-        top:5%;
-        left:50%;
-        transform:translateX(-50%);
-        display:block;
-        width:15%;
-        height:50px;
-        padding-top:0;
-
-       
-
-       
-
-        @mixin atSmall{
-            top:10%;
-        }
-
-        @mixin atMedium{
-            top:15%;
-            width:50px;
-             >img{
-          width:50px;
-            height:120px;
-            margin-right:0;
-        }
-        
-        }
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            width: 15%;
+            height: 50px;
+            padding-top: 0;
 
 
-    
+
+
+
+            @mixin atSmall {
+                top: 10%;
+            }
+
+            @mixin atMedium {
+                top: 15%;
+                width: 50px;
+
+                >img {
+                    width: 50px;
+                    height: 120px;
+                    margin-right: 0;
+                }
+
+            }
+
+
+
         }
 
     }
 
 
 
-    
+
 }

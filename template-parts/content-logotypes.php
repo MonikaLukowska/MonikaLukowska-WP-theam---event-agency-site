@@ -6,14 +6,18 @@
 
         ?>
 
-     <h5 class="headline headline--subtitle"><?php echo $title ?></h5>
+     <h5 data-aos="fade-up" class="headline headline--subtitle"><?php echo $title ?></h5>
      
-     <?php if($logos): ?>
-     <div class="testimonials__logo-container">
-     <?php foreach ($logos as $logo) : ?>
-        <li class="testimonials__logo-item"><img src="<?php echo $logo ?>" /></li>
-        <?php endforeach; ?>
+     <?php  if($logos): ?>
+     <div  class="testimonials__logo-container">
+     <?php  $count=0; foreach ($logos as $logo) : 
+     $count+=100;
+     
+       ?>
+        <li data-aos="zoom-in" data-aos-delay="<?php echo $count; ?>" class="testimonials__logo-item"><img src="<?php echo $logo ?>" /></li>
+     
+       <?php  endforeach; ?>
         </div>
-        <?php endif ?>
+        <?php  endif ?>
      <?php endwhile  ?>
      <?php endif ?>

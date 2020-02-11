@@ -14,7 +14,7 @@ get_header();
         ?>
         <div class="page-section page-section--border">
           <div class="wrapper wrapper--wider" >
-             <h2 class="headline headline--medium headline--about" style="text-align:left; margin-left:60px"><?php the_field('page-title') ?></h2>
+             <h2 data-aos="fade-in" data-aos-duration="1000" class="headline headline--medium headline--about" style="text-align:left; margin-left:60px"><?php the_field('page-title') ?></h2>
             </div>
         <?php endwhile; // end of the loop. ?>
         <?php
@@ -28,11 +28,11 @@ get_header();
                 <div class="image-text-block-section">
                     <div class="image-text-block-section__block image-text-block-section__block--about">
                         <div class="image-text-block-section__block__content">
-                            <div class="paragraph-block">
+                            <div data-aos="fade-right" class="paragraph-block">
                                 <p class="paragraph-block__content"><?php echo $paragraph1 ?></p>
                             </div>
                             </div>
-                            <div class="image-text-block-section_block__img"><img src="<?php echo $image1['url'] ?>" alt="<?php echo $image1['alt']?>"></div>   
+                            <div data-aos="fade-left"class="image-text-block-section_block__img"><img src="<?php echo $image1['url'] ?>" alt="<?php echo $image1['alt']?>"></div>   
                         </div>
                             <?php endwhile; // end of the loop. ?>
                             <?php endif; // end of the loop. ?>
@@ -44,14 +44,14 @@ get_header();
            $image1 = get_sub_field('image1');
          
             ?>
-              <div class="image-text-block-section__block image-text-block-section__block--about">
+              <div data-aos="fade-right"class="image-text-block-section__block image-text-block-section__block--about">
                 <div class="image-text-block-section_block__img image-text-block-section__block__img--none-sm"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div>
-                <div class="image-text-block-section__block__content">
+                <div data-aos="fade-left" class="image-text-block-section__block__content">
                             <div class="paragraph-block">
                                 <p class="paragraph-block__content"><?php echo $paragraph1 ?></p>
                             </div>
                  </div> 
-                 <div class="image-text-block-section_block__img image-text-block-section__block__img--none-md"><img src=<?php echo $image1 ['url']?> alt="<?php echo $image1['alt']?>"></div>      
+                 <div data-aos="fade-right"class="image-text-block-section_block__img image-text-block-section__block__img--none-md"><img src=<?php echo $image1 ['url']?> alt="<?php echo $image1['alt']?>"></div>      
                </div>
                             <?php endwhile; // end of the loop. ?>
                             <?php endif; // end of the loop. ?>
@@ -64,12 +64,12 @@ get_header();
             ?>
         
                <div class="image-text-block-section__block image-text-block-section__block--about">
-                        <div class="image-text-block-section__block__content">
+                        <div data-aos="fade-right" class="image-text-block-section__block__content">
                             <div class="paragraph-block">
                                 <p class="paragraph-block__content"><?php echo $paragraph1 ?></p>
                             </div>
                         </div>
-                       <div class="image-text-block-section_block__img"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div>
+                       <div data-aos="fade-left" class="image-text-block-section_block__img"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div>
                    </div>
                             <?php endwhile; // end of the loop. ?>
                             <?php endif; // end of the loop. ?>

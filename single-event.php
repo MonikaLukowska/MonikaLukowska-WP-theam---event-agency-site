@@ -5,6 +5,9 @@ while(have_posts()){
 <div class="page-section page-section--padding-top">
 
 <h2 class="headline headline--medium"><?php the_title(); ?></h2>
+<div class="wrapper">
+     <p><?php the_field('description') ?></p>
+   </div>
 <div class="gallery gallery--singiel">
   
 <?php 

@@ -4,9 +4,9 @@
 function portfolioCarousel(){
     ?>
     <div class="wrapper wrapper--wider">
-    <h2 class="headline headline--medium">Nasze realizacje</h2>
+    <h2 data-aos="fade-up" class="headline headline--medium">Nasze realizacje</h2>
     <div class="portfolio__bottom">
-              <div class="portfolio__carousel">
+              <div data-aos="fade-up" data-aos-delay="500" class="portfolio__carousel">
  
                       <?php
               $eventCarousel = new WP_Query(array(
@@ -80,6 +80,7 @@ function mb_studio_src(){
         add_image_size('bannerFull', 1800, 620);
         add_image_size('bannerMobile',480,440, array('center', 'center'));
         add_image_size('bannerMedium',780,540, array('center', 'center'));
+        add_image_size('mottoMobile', 530, 630,  array('center', 'center'));
     }
 
     add_action('after_setup_theme', 'mb_studio_features');

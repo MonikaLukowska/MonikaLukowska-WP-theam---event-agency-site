@@ -15,7 +15,7 @@ get_header();
       ?>
      
         <div class="page-section page-section--border">
-        <h2 class="headline headline--medium"><?php the_field('page-title') ?></h2>
+        <h2 data-aos="fade-in" data-aos-duration="1000" class="headline headline--medium"><?php the_field('page-title') ?></h2>
        
         <?php endwhile; // end of the loop. ?>
         <?php
@@ -33,7 +33,7 @@ get_header();
             <div class="wrapper wrapper--wider">
                 <div class="image-text-block-section">
                     <div class="image-text-block-section__block">
-                        <div class="image-text-block-section__block__content">
+                        <div data-aos="fade-right" class="image-text-block-section__block__content">
                             <div class="feature-block feature-block--offer">
                                 <img src="<?php echo $header['icon'] ?>" alt="ikona o nas1">
                                 <p class="feature-block__desc"><?php echo $header['title'] ?></p>
@@ -51,7 +51,7 @@ get_header();
                                 <p class="paragraph-block__content"><?php echo $paragraph3 ?></p>
                             </div>
                             </div>
-                            <div class="image-text-block-section_block__img"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div>
+                            <div data-aos="fade-left" class="image-text-block-section_block__img"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div>
                     </div>
                             <?php endwhile; // end of the loop. ?>
                             <?php endif; // end of the loop. ?>
@@ -66,25 +66,31 @@ get_header();
            $header= get_sub_field('header');
             ?>
         <div class="image-text-block-section__block">
-        <div class="image-text-block-section_block__img image-text-block-section__block__img--none-sm"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div>
-          <div class="image-text-block-section__block__content">
+        <div data-aos="fade-right" class="image-text-block-section_block__img image-text-block-section__block__img--none-sm"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div>
+          <div data-aos="fade-left" class="image-text-block-section__block__content">
                             <div class="feature-block feature-block--offer">
                                 <img src="<?php echo $header['icon'] ?>" alt="ikona o nas2">
                                 <p class="feature-block__desc"><?php echo $header['title'] ?></p>
                             </div> 
+                            <?php if($paragraph1) : ?>
                             <div class="paragraph-block">
                                 <p class="paragraph-block__content"><?php echo $paragraph1 ?></p>
                             </div>
+                            <?php endif ?>
+                            <?php if($paragraph2) : ?>
                             <div class="paragraph-block">
                  
                                 <p class="paragraph-block__content"><?php echo $paragraph2?></p>
                             </div>
+                            <?php endif ?>
+                            <?php if($paragraph3) : ?>
                             <div class="paragraph-block">
                  
                                 <p class="paragraph-block__content"><?php echo $paragraph3 ?></p>
-                            </div>  
+                            </div> 
+                            <?php endif ?> 
                             </div>
-          <div class="image-text-block-section_block__img image-text-block-section__block__img--none-md"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div> 
+          <div data-aos="fade-left"class="image-text-block-section_block__img image-text-block-section__block__img--none-md"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div> 
          </div>
                             <?php endwhile; // end of the loop. ?>
                             <?php endif; // end of the loop. ?>
@@ -100,7 +106,7 @@ get_header();
             ?>
         
         <div class="image-text-block-section__block">
-        <div class="image-text-block-section__block__content">
+        <div data-aos="fade-right" class="image-text-block-section__block__content">
                             <div class="feature-block feature-block--offer">
                                 <img src="<?php echo $header['icon'] ?>" alt="ikona o nas3">
                                 <p class="feature-block__desc"><?php echo $header['title'] ?></p>
@@ -118,7 +124,7 @@ get_header();
                                 <p class="paragraph-block__content"><?php echo $paragraph3 ?></p>
                             </div>
                             </div>
-                            <div class="image-text-block-section_block__img"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div>
+                            <div data-aos="fade-left" class="image-text-block-section_block__img"><img src=<?php echo $image1['url'] ?> alt="<?php echo $image1['alt']?>"></div>
                     </div>
                     </div>
                             <?php endwhile; // end of the loop. ?>

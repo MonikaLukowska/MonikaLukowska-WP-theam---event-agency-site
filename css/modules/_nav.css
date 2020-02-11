@@ -141,15 +141,25 @@
 
       &>li {
         border-style: none;
-        text-align: left;
 
         @mixin atMedium {
-
           &.current-menu-item {
             border-style: none;
-            color: #444;
+
+            >a {
+              color: #444;
+              font-weight: 600;
+            }
+
           }
         }
+
+        >a {
+          text-align: left;
+        }
+
+
+
       }
 
       @mixin atMedium {

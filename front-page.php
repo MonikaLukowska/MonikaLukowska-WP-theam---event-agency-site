@@ -81,58 +81,85 @@
             <?php endwhile ?>
             <?php endif ?>
         </div>
-        <a class="btn btn--overlap">Sprawdź</a>
+        <a href="<?php echo site_url('/oferta'); ?>" class="btn btn--overlap">Sprawdź</a>
     </div>
     <div class="page-section page-section--sm-nopadding">
+
+    <?php 
+     if(have_rows('counter')) :
+        while(have_rows('counter')) :the_row();
+        $group1 = get_sub_field('group1');
+        $group2 = get_sub_field('group2');
+        $group3 = get_sub_field('group3');
+        $group4 = get_sub_field('group4');
+    ?>
         <div class="counter-section">
-            <div class="counter-section__block">
-                <span class="counter-section__count">220</span>
-                <span class="counter-section__desc">pracowników</span>
+        <?php if(($group1['num']) && ($group1['desc'])) : ?>
+            <div data-aos="fade-up" class="counter-section__block">
+                <span class="counter-section__count"><?php echo $group1['num'] ?></span>
+                <span class="counter-section__desc"><?php echo $group1['desc'] ?></span>
             </div>
-            <div class="counter-section__block">
-                <span class="counter-section__count">106</span>
-                <span class="counter-section__desc">kontraktów</span>
+            <?php endif ?>
+            <?php if(($group2['num']) && ($group2['desc'])) : ?>
+            <div data-aos="fade-up"  class="counter-section__block">
+                <span class="counter-section__count"><?php echo $group2['num'] ?></span>
+                <span class="counter-section__desc"><?php echo $group2['desc'] ?></span>
             </div>
-            <div class="counter-section__block">
-                <span class="counter-section__count">41</span>
-                <span class="counter-section__desc">pracowników</span>
+            <?php endif ?>
+            <?php if(($group3['num']) && ($group3['desc'])) : ?>
+            <div data-aos="fade-up"  class="counter-section__block">
+                <span class="counter-section__count"><?php echo $group3['num'] ?></span>
+                <span class="counter-section__desc"><?php echo $group3['desc'] ?></span>
             </div>
-            <div class="counter-section__block">
-                <span class="counter-section__count">150</span>
-                <span class="counter-desc">klientów</span>
+            <?php endif ?>
+            <?php if(($group4['num']) && ($group4['desc'])) : ?>
+            <div data-aos="fade-up" class="counter-section__block">
+                <span class="counter-section__count"><?php echo $group4['num'] ?></span>
+                <span class="counter-section__desc"><?php echo $group4['desc'] ?></span>
             </div>
+            <?php endif ?>
         </div>
+        <?php endwhile ?>
+        <?php endif ?>
     </div>
     <div class="page-section page-section--medium-6">
+    <?php 
+     if(have_rows('motto')) :
+        while(have_rows('motto')) :the_row();
+        $img = get_sub_field('image');
+        $quote = get_sub_field('quote');
+        $author = get_sub_field('author');
+        if($img) :
+            $full = $img['url'];
+            $mobile= $img['sizes']['mottoMobile']; 
+    ?>
     <picture>
-        <source data-srcset="<?php echo get_stylesheet_directory_uri(); ?>/images/laughing-boy-hd.png" media="(min-width: 600px)">
-        <img class="lazyload" data-src="<?php echo get_stylesheet_directory_uri(); ?>/images/laughing_boy_small.png" alt="happy child">
+        <source data-srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" media="(min-width: 600px)">
+        <img class="lazyload" data-src="<?php echo esc_url($mobile)?>" alt="<?php echo esc_attr($alt)?>">
     </picture>
+    <?php endif ?>
         <div class="page-section__yellow-col">
             <div data-aos="fade-left" class="quotes">
             <div class="quotes__quotation"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/quotation.png" alt="quotation icon" /></div>
                 <div class="quotes__content">
-                    <p class="qutes__text">Ludzie wystarczająco szaleni, by sądzić, ze mogą zmienić świat, są tymi,
-                        którzy go
-                        zmieniają.</p>
-                    <p class="quotes__author">Apple, 1997</p>
+                    <p class="qutes__text"><?php echo $quote ?></p>
+                    <p class="quotes__author"><?php echo $author ?></p>
                 </div>
             </div>
         </div>
     </div>
+    <?php endwhile ?>
+    <?php endif ?>
     </div>
     <div class="page-section page-section--border">
         <div class="about">
             <div class="wrapper">
                 <h2 data-aos="fade-up"  class="headline headline--medium">O nas</h2>
-                <p data-aos="fade-up"  class="main-content">Agencja Promocyjna i Eventowa STUDIO MB od ponad 15 lat z sukcesem realizuje
-                    projekty eventowe,
-                    PR-owe i BLT-owe w skali ogólnopolskiej. Współpracujemy z prestiowymi firmami i markami
-                    zapewniając im kompleksowe strategie marketingu bezpośredniego.</p>
+                <p data-aos="fade-up"  class="main-content"><?php the_field('about') ?></p>
 
                     <?php get_template_part('template-parts/content', 'features');?>
 
-                <a class="btn">Czytaj więcej</a>
+                <a href="<?php echo site_url('/o-nas'); ?>" class="btn">Czytaj więcej</a>
             </div>
         </div>
     </div>
@@ -144,8 +171,9 @@
         </div>
     </div>
     <div class="page-section">
+    <div class="testimonials-container">
         <div class="testimonials">
-            <div class="testimonials__slider">
+            <div data-aos="fade-up" class="testimonials__slider">
                 <h2 class="headline headline--medium headline--overlap">Opinie klientów</h2>
                 <div class="testimonials__slides-container">
                 <?php
@@ -161,25 +189,13 @@
               ?>
                 </div>
             </div>
+            </div>
        </div>
-    
-        <?php 
-        if (have_rows('logotypes_section', 75)) :
-          while(have_rows('logotypes_section', 75)) :the_row();
-          $title = get_sub_field('title');
-          $logos = get_sub_field('logotypes');
-
-        ?>
-        <?php if($logos): ?>
-     <div class="testimonials__logo-container">
-     <?php foreach ($logos as $logo) : ?>
-        <li class="testimonials__logo-item"><img src="<?php echo $logo ?>" /></li>
-        <?php endforeach; ?>
+    <?php
+       get_template_part('template-parts/content', 'logotypes');
+       ?>  
         </div>
-        <?php endif ?>
-     <?php endwhile  ?>
-     <?php endif ?>
-        </div>
+       
     </div>
 </div>
     <?php get_footer();

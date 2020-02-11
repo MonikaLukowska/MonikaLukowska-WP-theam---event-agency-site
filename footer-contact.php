@@ -5,7 +5,7 @@
                 <div class="footer__logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/studio_logo_sm.png" alt="logo studio mb"></div>
                 <div class="footer__addres">
                     <p>Studio MP<br> ul. Gdańska 27, I piętro<br>85-005 Bydgoszcz<br>biuro@studiomb.pl</p>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/AgencjaEventowaStudioMB/"><i class="fab fa-facebook-f"></i></a>
                 </div>
                 <nav class="navigation navigation--footer">
                     <ul>

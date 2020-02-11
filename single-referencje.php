@@ -4,7 +4,8 @@ while(have_posts()){
     the_post();?>
    
   <div class="page-section page-section--sm-nopadding page-section--padding-top">
-        <div class="testimonials">
+  <div class="testimonials-container">      
+  <div class="testimonials">
             <div class="testimonials__slider">
                 <h2 class="headline headline--medium headline--overlap">Opinie klientów</h2>
                 <div class="testimonials__slides-container">
@@ -13,7 +14,7 @@ while(have_posts()){
                     ?>
                     </div>
                     </div>
-                   
+</div>
   
 
 </div>

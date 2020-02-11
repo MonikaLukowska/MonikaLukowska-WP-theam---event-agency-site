@@ -12,7 +12,7 @@ class PortfolioCarousel{
     slidesToShow:3,
       autoplay: true,
       lazyload:true,
-      nextArrow: '<i class="fas fa-chevron-right"></i>',
+      nextArrow: '<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/slick-next.png" />',
       prevArrow: '<i class="fas fa-chevron-left"></i>',
       dots: false,
       responsive:[

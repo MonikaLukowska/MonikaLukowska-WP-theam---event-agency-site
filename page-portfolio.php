@@ -9,10 +9,10 @@
 get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 <div class="page-section page-section--padding-top">
-<h2 class="headline headline--medium"><?php the_field('page_title') ?></h2>
+<h2 data-aos="fade-in" class="headline headline--medium"><?php the_field('page_title') ?></h2>
 
    <div class="wrapper">
-     <p><?php the_field('page_description') ?></p>
+     <p data-aos="fade-in"><?php the_field('page_description') ?></p>
    </div>
    <?php endwhile; // end of the loop. ?>
    <div class="gallery">
@@ -23,7 +23,7 @@ get_header(); ?>
 
           while ($eventCarousel->have_posts()) {
             $eventCarousel->the_post(); ?>
- <div class="gallery__event">
+ <div data-aos="zoom-in" class="gallery__event">
          <figure>
           <?php echo get_the_post_thumbnail(); ?>
           <a class="overlay" href="<?php the_permalink(); ?>"> 
@@ -46,14 +46,14 @@ get_header(); ?>
       $subtitle = get_sub_field('subtitle');
       $brands = get_sub_field('b_group');
    ?>
-   <h2 class="headline headline--medium"><?php echo $title ?></h2>
-     <h5 class="headline headline--subtitle"><?php echo $subtitle ?></h5>
+   <h2 data-aos="fade-up"class="headline headline--medium"><?php echo $title ?></h2>
+     <h5 data-aos="fade-up" class="headline headline--subtitle"><?php echo $subtitle ?></h5>
     
     
      <?php if($brands): ?>
      <div class="row row--medium-6">
      <?php foreach ($brands as $brand) : ?>
-     <div class="paragraph-block">
+     <div data-aos="fade-up" class="paragraph-block">
             <div class="paragraph-block__border"></div>
             <p class="paragraph-block__content"><?php echo $brand ?></p>
         </div>
@@ -78,38 +78,38 @@ get_header(); ?>
     $g5 = get_sub_field('group5');
    ?>
    <div class="banner banner--artists" style="background-image: url(<?php echo $bgc ?>)">
-       <h5 class="headline headline--subtitle"><?php echo $title ?></h5>
+       <h5 data-aos="fade-up" class="headline headline--subtitle"><?php echo $title ?></h5>
        <div class="row row--medium-12">
        <?php if($g1): ?>
-           <ul class="artists">
+           <ul data-aos="fade-up" class="artists">
            <?php foreach($g1 as $art1) : ?>
              <li><?php echo $art1 ?></li>
              <?php endforeach; ?>
            </ul>
            <?php endif ?>
            <?php if($g2): ?>
-           <ul class="artists">
+           <ul data-aos="fade-up" class="artists">
            <?php foreach($g2 as $art2) : ?>
              <li><?php echo $art2 ?></li>
              <?php endforeach; ?>
            </ul>
            <?php endif ?>
            <?php if($g3): ?>
-           <ul class="artists">
+           <ul data-aos="fade-up" class="artists">
            <?php foreach($g3 as $art3) : ?>
              <li><?php echo $art3 ?></li>
              <?php endforeach; ?>
            </ul>
            <?php endif ?>
            <?php if($g4): ?>
-           <ul class="artists">
+           <ul data-aos="fade-up" class="artists">
            <?php foreach($g4 as $art4) : ?>
              <li><?php echo $art4 ?></li>
              <?php endforeach; ?>
            </ul>
            <?php endif ?>
            <?php if($g5): ?>
-           <ul class="artists">
+           <ul data-aos="fade-up" class="artists">
            <?php foreach($g5 as $art5) : ?>
              <li><?php echo $art5 ?></li>
              <?php endforeach; ?>

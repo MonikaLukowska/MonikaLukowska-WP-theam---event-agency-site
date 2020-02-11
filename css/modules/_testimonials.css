@@ -1,126 +1,162 @@
-.testimonials {
-  position: relative;
-  min-height:100vh;
+.testimonials-container {
   background-image: url("./images/testimonials-background.jpg");
   background-size: cover;
   text-align: center;
 
-  @mixin atMedium{
-   
-   
+
+  @mixin atMedium {
+    padding-top: 50px;
   }
 
+  &--paddingbt {
+
+    @mixin atMedium {
+      padding-bottom: 3rem;
+    }
+  }
+}
+
+.testimonials {
+  position: relative;
+  min-height: 100vh;
+
+  @mixin atMedium {
+    margin-top: 80px;
+    min-height: 80vh;
+  }
+
+  @mixin atLarge {
+    min-height: 60vh;
+  }
+
+
+
+
   &__slider {
-    
+    padding-bottom: 50px;
     width: 100%;
-    min-height:90vh;
-    max-height: 80%;
     background-color: #fff;
+    max-width: 937px;
 
-     
 
-    @mixin atMedium{
-      min-height:80vh;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width:60%;
+
+    @mixin atMedium {
+
+      width: 100%;
+      margin: 0 auto;
+
+
     }
-    &--middle{
 
-      @mixin atMedium{
-        bottom: 50%;
-       left: 50%;
-        transform: translate(-50%, 50%);
-      }
-    }
+
 
     .slick-dots {
-    position:absolute;
-    display:flex;
-    bottom:-15%;
-    left:50%;
-    transform: translateX(-50%);
-	  margin: 0;
-	  padding: 1rem 0;
-	  list-style-type: none;
-	
-		li {
-			margin: 0.25rem;
-		}
-	
-		button {
-			display: block;
-			width: 1rem;
-			height: 1rem;
-			padding: 0.1rem;
-			border: 1px solid #191C40;
-			border-radius: 100%;
-			background-color: rgba(#E6E6E6, .1);
-			
-			text-indent: -9999px;
-		}
-	
-		li.slick-active button {
-			background-color: #191C40;
-		}
+      position: absolute;
+      display: flex;
+      bottom: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 1rem 0;
+      list-style-type: none;
 
-   
-	
-}
+      li {
+        margin: 0.25rem;
+      }
+
+      button {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        padding: 0.1rem;
+        border: 1px solid #191C40;
+        border-radius: 100%;
+        background-color: rgba(#E6E6E6, .1);
+
+        text-indent: -9999px;
+      }
+
+      li.slick-active button {
+        background-color: #191C40;
+      }
+
+
+
+
+    }
 
   }
 
   &__slides-container {
+    padding-bottom: 10px;
     max-width: 40rem;
-    height:100%;
+    min-height: 100%;
     margin: 0 auto;
     background-color: #fff;
 
-    @mixin atMedium{
-      height:100%;
+    @mixin atMedium {
+      height: 100%;
     }
   }
-  &__slide{
-    height:100%;
+
+  &__slide {
+    height: 100%;
+
+
+    &--img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 15px 10px 15px;
+
+      @mixin atMedium {
+        padding-top: 100px;
+      }
+
+    }
   }
 
   &__logo-container {
-   
+
     margin: 3.125em 1.5em 0 1.5em;
     display: flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    flex-wrap: wrap;
+    justify-content: center;
     align-content: baseline;
 
-    @mixin atSmall{
-      justify-content:space-around;
-      margin-top:1em;
+    @mixin atSmall {
+      justify-content: space-around;
+      margin-top: 1em;
     }
 
-    @mixin atMedium{
-      margin: 3.125em 1.5em 2em 1.5em;
+    @mixin atMedium {
+      max-width:1140px;
+      margin: 3.125em auto 0 auto;
       
-      max-height:100px;
-      flex-wrap:nowrap;
     }
+    @mixin atFull{
+      height:auto;
+      margin: 3.125em 1.5em 0 1.5em;
+      max-width: 1920px;
+    }
+   
   }
 
   &__logo-item {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     flex: 0 1 50%;
-    max-width:10rem;
-    height:150px;
-    margin-top:2em;
-    flex-basis:50%;
+    max-width: 10rem;
+    height: 150px;
+    margin: 2em 1em 1em 1em;
+    flex-basis: 50%;
     filter: grayscale(100%);
     transform: scale(0.9);
     transition: all 0.4s ease-out;
 
-    @mixin atMedium{
-      margin-top:0;
+    @mixin atMedium {
+      margin-top: 0;
+      width:25%;
     }
   }
 
@@ -130,11 +166,47 @@
   }
 
   .slick-list,
-  .slick-track{
-    height:100%;
+  .slick-track {
+    height: 100%;
+
+
   }
-  .slick-slide>div{
-    height:100%;
+
+  .slick-slide>div {
+    height: 100%;
   }
-  
+
+  .fa-arrow-left {
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    padding-left: 1em;
+    font-size: 1.8rem;
+
+    @mixin atLarge {
+      left: -150px;
+    }
+
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .fa-arrow-right {
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    padding-right: 1em;
+    font-size: 1.8rem;
+
+    @mixin atLarge {
+      right: -150px;
+    }
+
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

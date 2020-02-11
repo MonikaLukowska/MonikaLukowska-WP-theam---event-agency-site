@@ -1,5 +1,3 @@
-
-
 <?php
 
 /**
@@ -27,7 +25,7 @@ get_header(); ?>
             <?php endif ?>
          </picture> 
             <div class="contact">
-              <h2 class="headline headline--medium headline--overlap"><?php the_field('page-title') ?></h2>
+              <h2   class="headline headline--medium headline--overlap"><?php the_field('page-title') ?></h2>
               <div class="contact__details">
             <?php 
             if (have_rows('contact')):

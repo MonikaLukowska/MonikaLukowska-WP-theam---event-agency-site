@@ -14,3 +14,8 @@
     @mixin-content;
   }
 }
+@define-mixin atFull {
+  @media (min-width: 1750px) {
+    @mixin-content;
+  }
+}
