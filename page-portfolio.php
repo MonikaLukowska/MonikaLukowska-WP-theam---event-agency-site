@@ -13,7 +13,7 @@ get_header(); ?>
 
    <div class="wrapper">
      <p data-aos="fade-in"><?php the_field('page_description') ?></p>
-   </div>
+ </div>
    <?php endwhile; // end of the loop. ?>
    <div class="gallery">
    <?php
@@ -31,7 +31,7 @@ get_header(); ?>
            </a>
          </figure>       
     </div>
-
+    
   <?php }wp_reset_postdata();
    ?>
   

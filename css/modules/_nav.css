@@ -115,6 +115,11 @@
       display: block;
       max-width: 250px;
       flex: 0 1 40%;
+
+      >a {
+        position: relative;
+
+      }
     }
   }
 
@@ -125,21 +130,24 @@
     justify-content: flex-start;
     margin-top: 2em;
     font-size: 0.87rem;
-    width: auto;
+    width: 100%;
 
 
 
     @mixin atMedium {
       margin-top: 0;
       padding: 0;
+      width: auto;
     }
 
     ul {
+      flex-grow: 1;
       padding: 0;
       flex-direction: column;
       align-items: center;
 
       &>li {
+        margin-left: 0;
         border-style: none;
 
         @mixin atMedium {

@@ -9,109 +9,132 @@
 
 
 
-    &--medium-4{
-        width:80%;
-        margin:0 auto;
-        flex-direction:column;
-         
-        
+    &--medium-4 {
+        width: 80%;
+        margin: 0 auto;
+        flex-direction: column;
 
-        @mixin atMedium{
-            width:100%;
-            max-width:90rem;
-            flex-direction:row;
-            justify-content:space-around;
-           
 
-             &>div,
-                p,
-                form,
-                h3,
-                nav {
-                flex-basis: 33%;
-                }
+
+        @mixin atMedium {
+            width: 100%;
+            max-width: 90rem;
+            flex-direction: row;
+            justify-content: space-around;
+
+
+            &>div,
+            p,
+            form,
+            h3,
+            nav {
+                flex-basis: 30%;
+            }
+        }
+    }
+
+    &--noflex {
+        @mixin atMedium {
+            justify-content: space-between;
+
         }
 
-       
+        @mixin atLarge {
+            >h3 {
+                flex: 0 1 28%;
+                margin-right:10px;
+            }
+
+            >p {
+                flex: 0 1 28%;
+                margin-right:10px;
+            }
+
+            >div {
+                flex: 1 0 42%
+            }
+
+
+        }
+    }
+
+    &--start {
+        justify-content: flex-start;
+        align-items: flex-start;
+
+
+        @mixin atMedium {
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    &--medium-6 {
+        margin-top: 4em;
+        align-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+
+        >div {
+            flex-basis: 100%;
+        }
+
+        @mixin atMedium {
+            margin-top: 7em;
+            justify-content: space-between;
+
+            >div {
+                flex-basis: 40%;
+            }
+        }
+
+    }
+
+    &--features {
+        justify-content: center;
+
+
+    }
+
+    &--medium-12 {
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        flex-wrap: wrap;
+
+        >ul {
+            padding: 0;
+        }
+
+        @mixin atSmall {
+            flex-direction: row;
+            justify-content: space-around;
+
+            >ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex-basis: 50%;
+            }
+        }
+
+        @mixin atMedium {
+            justify-content: center;
+
+            >ul {
+                flex-basis: 30%;
+            }
+        }
+
+        @mixin atLarge {
+            >ul {
+                flex-basis: 20%;
+            }
+        }
 
     }
 
     &--start {
-        justify-content:flex-start;
-        align-items: flex-start;
-
-
-        @mixin atMedium{
-        justify-content:flex-start;
-        align-items: flex-start;
-        }
+        max-height: 600px;
     }
-
-    &--medium-6{
-    margin-top:4em;
-    align-content:center;
-    align-items:stretch;
-    flex-wrap:wrap;
-
-      >div{
-          flex-basis:100%;
-      }
-
-    @mixin atMedium{
-        margin-top:7em;
-    justify-content:space-between;
-        >div{
-        flex-basis: 40%;
-    }
-    }
-
-    }
-
-   &--features{
-       justify-content:center;
-       
-
-   }
-
-   &--medium-12{
-       flex-direction:column;
-       justify-content:space-around;
-       text-align:center;
-       flex-wrap:wrap;
-
-       >ul{
-           padding:0;
-       }
-
-       @mixin atSmall{
-           flex-direction:row;
-           justify-content:space-around;
-           
-           >ul{
-               display:flex;
-               flex-direction:column;
-               align-items:center;
-               flex-basis:50%;
-           }
-       }
-
-       @mixin atMedium{
-           justify-content:center;
-
-           >ul{
-               flex-basis:30%;
-           }
-       }
-
-       @mixin atLarge{
-           >ul{
-               flex-basis:20%;
-           }
-       }
-
-   }
-
-   &--start{
-        max-height:600px;
-   }
 }

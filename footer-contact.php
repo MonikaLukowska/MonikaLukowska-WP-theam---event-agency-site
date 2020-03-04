@@ -1,11 +1,15 @@
 <footer>
         <div class="footer footer__lower">
             <div class="page-content">
-            <div class="row row--medium-4 row--start">
+            <div class="row row--medium-4 row--start row--noflex">
                 <div class="footer__logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/studio_logo_sm.png" alt="logo studio mb"></div>
                 <div class="footer__addres">
-                    <p>Studio MP<br> ul. Gdańska 27, I piętro<br>85-005 Bydgoszcz<br>biuro@studiomb.pl</p>
+                    <p>Studio MB<br> ul. Gdańska 27, I piętro<br>85-005 Bydgoszcz<br><a href="mailto:biuro@studiomb.pl">biuro@studiomb.pl<a></p>
+                    <div class="footer__socials">
                     <a href="https://www.facebook.com/AgencjaEventowaStudioMB/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/studiomb"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    
                 </div>
                 <nav class="navigation navigation--footer">
                     <ul>

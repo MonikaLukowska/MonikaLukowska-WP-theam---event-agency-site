@@ -115,37 +115,40 @@
 
 
 
-        .quotes__text-content {
-            margin-top: 25%;
-        }
-
+      
 
         .quotes__quotation {
-            position: absolute;
-            top: 5%;
-            left: 50%;
-            transform: translateX(-50%);
+            position:static;
+            margin-top:80px;
             display: block;
-            width: 15%;
-            height: 50px;
+            width: 30px;
+            height: 60px;
             padding-top: 0;
 
-
+           >img {
+                height: 60px;
+                width: 30px;
+           }
 
 
 
             @mixin atSmall {
-                top: 10%;
+                width: 40px;
+                height: 80px;
+
+                 >img {
+                height: 80px;
+                width: 40px;
+           }
             }
 
-            @mixin atMedium {
-                top: 15%;
+            @mixin atMedium {  
                 width: 50px;
+                height: 100px;
 
                 >img {
-                    width: 50px;
-                    height: 120px;
-                    margin-right: 0;
+                height: 100px;
+                width: 50px;
                 }
 
             }

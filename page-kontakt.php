@@ -35,11 +35,11 @@ get_header(); ?>
                 $line2 = get_sub_field('address2');
                 $email = get_sub_field('email');
 
-               print_r($name) 
+  
             ?>
                  <span><?php echo $name ?><br> <?php echo $line1 ?><br><?php echo $line2 ?></span>
                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/ikonka mail.png" alt="ikona email" />
-                 <span><?php echo $email ?></span>
+                 <span><a href="mailto:<?php echo $email ?>"><?php echo $email ?><a></span>
               </div>
               <?php endwhile ?>
               <?php endif ?>
@@ -47,10 +47,7 @@ get_header(); ?>
             </div>
         </div>
       
-
-    <?php 
-    get_footer('form');
-    ?>
+        <?php get_template_part('template-parts/content', 'form');?>
     <iframe class="map" src="https://snazzymaps.com/embed/213771"  style="border:none;"></iframe>
 </div>
 </div>

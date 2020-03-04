@@ -3,6 +3,7 @@
 
 <head>
     <?php wp_head(); ?>
+    
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,6 +13,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<?php get_template_part('template-parts/content', 'spinner');?>
+
     <div class="page-section--header">
         <header class="site-header" id="site-header">
         <div class="page-content">

@@ -1,0 +1,40 @@
+.cookie-notice {
+    width: 100vw;
+    min-height: 40vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+    >p {
+        padding: 0 20px;
+        color: #3d3d3d;
+    }
+
+    >div {
+        display: flex;
+
+    }
+
+    >div>a {
+        color: $mainBlue;
+        margin: 10px 10px;
+        padding: 0 10px;
+        border-radius: 20px;
+        text-decoration: none;
+        cursor: pointer;
+        border: solid 2px $mainBlue;
+
+
+    }
+
+    @mixin atMedium {
+        min-height: 20vh;
+    }
+}

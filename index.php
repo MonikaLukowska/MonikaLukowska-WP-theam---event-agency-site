@@ -1,114 +1,202 @@
-<?php get_header(); ?>
+<?php 
+  if(have_rows('hero')) :
+    while(have_rows('hero')) :the_row();
+    $slide1 = get_sub_field('slide1');
+    $slide2 = get_sub_field('slide2');
+    $slide3 = get_sub_field('slide3');
 
-<h2 class="headline headline--medium">Nasze Realizacje</h2>
+?>
 
-   <div class="wrapper">
-     <p>Dziesiątki na stałe współpracujących z nami firm i marek to potwierdzenie naszych kompetencji, profesjonalizmu i skuteczności w realizacji wyznaczonych celów</p>
-   </div>
-   <?php
-    // while(have_posts()) {
-    //     the_post();?>
-       
-   <div class="gallery">
-   <?php
-   while(have_posts()){
-       the_post()?>
- <div class="gallery__event">
-         <figure>
-          <img src="<?php echo get_the_post_thumbnail(); ?>" alt="" />
-          <a class="overlay" href="<?php the_permalink(); ?>"> 
-          <figcaption class="overlay"><p><?php the_title(); ?></p></figcaption>
-           </a>
-         </figure>       
+<div class="hero-slider">
+        <div class="hero-slider__container">
+            <div class="hero-slider__slide hero-slider__slide--1">
+              <picture>
+            <?php
+            $img = $slide1['image'];
+            if($img):
+            $full = $img['sizes']['bannerFull'];
+            $medium= $img['sizes']['bannerMedium'];
+            $mobile = $img['sizes']['bannerMobile'];
+            ?>
+            <source  media="(min-width: 900px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
+            <source  media="(min-width: 530px)" srcset="<?php echo esc_url($medium)?>" alt="<?php echo esc_attr($alt)?>" />
+            <img src="<?php echo esc_url($mobile)?>" alt="<?php esc_attr($mobile)?>"/>
+              
+            <?php endif ?>
+             </picture>
+                <div class="hero-slider__overlay container">
+                    <div class="hero-slider__text-content">
+                        <h1 class="headline headline--large"><?php echo $slide1['title']; ?></h1>
+                        <p class="main-content main-content--slider"><?php echo $slide1['desc']; ?></p>
+                    </div>
+                </div>
+            </div>
+          
+           
+            <div class="hero-slider__slide hero-slider__slide--2 lazyload">
+            <picture>
+            <?php
+            $img = $slide2['image'];
+            if($img):
+            $full = $img['sizes']['bannerFull'];
+            $medium= $img['sizes']['bannerMedium'];
+            $mobile = $img['sizes']['bannerMobile'];
+            ?>
+            <source  media="(min-width: 900px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
+            <source  media="(min-width: 530px)" srcset="<?php echo esc_url($medium)?>" alt="<?php echo esc_attr($alt)?>" />
+            <img src="<?php echo esc_url($mobile)?>" alt="<?php esc_attr($mobile)?>"/>
+              
+            <?php endif ?>
+             </picture>
+                <div class="hero-slider__overlay container">
+                    <div class="hero-slider__text-content">
+                        <h1 class="headline headline--large"><?php echo $slide2['title']; ?></h1>
+                        <p class="main-content main-content--slider"><?php echo $slide2['desc']; ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slider__slide hero-slider__slide--3 lazyload">
+            <picture>
+            <?php
+            $img = $slide3['image'];
+            if($img):
+            $full = $img['sizes']['bannerFull'];
+            $medium= $img['sizes']['bannerMedium'];
+            $mobile = $img['sizes']['bannerMobile'];
+            ?>
+            <source  media="(min-width: 900px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
+            <source  media="(min-width: 530px)" srcset="<?php echo esc_url($medium)?>" alt="<?php echo esc_attr($alt)?>" />
+            <img src="<?php echo esc_url($mobile)?>" alt="<?php esc_attr($mobile)?>"/>
+              
+            <?php endif ?>
+             </picture>
+                <div class="hero-slider__overlay container">
+                    <div class="hero-slider__text-content">
+                        <h1 class="headline headline--large"><?php echo $slide3['title']; ?></h1>
+                        <p class="main-content main-content--slider"><?php echo $slide3['desc']; ?></p>
+                    </div>
+                </div>
+            </div>
+            <?php endwhile ?>
+            <?php endif ?>
+        </div>
+        <a href="<?php echo site_url('/oferta'); ?>" class="btn btn--overlap">Sprawdź</a>
     </div>
+    <div class="page-section page-section--sm-nopadding">
 
-  <?php }
-   ?>
-  
-   </div>
-  
-   
-   <div class="wrapper">
-   <h2 class="headline headline--medium">Współpraca z prestiżowymi markami</h2>
-     <h5 class="headline headline--subtitle">Prestiżowe galerie handlowe dla których realizujemy kompleksowe projekty eventowe:</h5>
-     <div class="row row--medium-6">
-        <div class="paragraph-block">
-            <div class="paragraph-block__border"></div>
-            <p class="paragraph-block__content">Sieć Galerii Handlowych zarządzanych przez Apsys Polska</p>
+    <?php 
+     if(have_rows('counter')) :
+        while(have_rows('counter')) :the_row();
+        $group1 = get_sub_field('group1');
+        $group2 = get_sub_field('group2');
+        $group3 = get_sub_field('group3');
+        $group4 = get_sub_field('group4');
+    ?>
+        <div class="counter-section">
+        <?php if(($group1['num']) && ($group1['desc'])) : ?>
+            <div data-aos="fade-up" class="counter-section__block">
+                <span class="counter-section__count"><?php echo $group1['num'] ?></span>
+                <span class="counter-section__desc"><?php echo $group1['desc'] ?></span>
+            </div>
+            <?php endif ?>
+            <?php if(($group2['num']) && ($group2['desc'])) : ?>
+            <div data-aos="fade-up"  class="counter-section__block">
+                <span class="counter-section__count"><?php echo $group2['num'] ?></span>
+                <span class="counter-section__desc"><?php echo $group2['desc'] ?></span>
+            </div>
+            <?php endif ?>
+            <?php if(($group3['num']) && ($group3['desc'])) : ?>
+            <div data-aos="fade-up"  class="counter-section__block">
+                <span class="counter-section__count"><?php echo $group3['num'] ?></span>
+                <span class="counter-section__desc"><?php echo $group3['desc'] ?></span>
+            </div>
+            <?php endif ?>
+            <?php if(($group4['num']) && ($group4['desc'])) : ?>
+            <div data-aos="fade-up" class="counter-section__block">
+                <span class="counter-section__count"><?php echo $group4['num'] ?></span>
+                <span class="counter-section__desc"><?php echo $group4['desc'] ?></span>
+            </div>
+            <?php endif ?>
         </div>
-        <div class="paragraph-block">
-        <div class="paragraph-block__border"></div>
-        <p class="paragraph-block__content">Sieć Galerii Handlowych zarządzanych przez Segece Polska</p>
-      </div>
-      <div class="paragraph-block">
-        <div class="paragraph-block__border"></div>
-        <p class="paragraph-block__content">Sieć Galerii Handlowych zarządzanych przez Alfa Asset</p>
-      </div>
-      <div class="paragraph-block">
-        <div class="paragraph-block__border"></div>
-        <p class="paragraph-block__content">Sieć Galerii Handlowych zarządzanych przez Echo Investment</p>
-      </div>
-      <div class="paragraph-block">
-        <div class="paragraph-block__border"></div>
-        <p class="paragraph-block__content">Sieć Galerii Handlowych zarządzanych przez Auchan Polska</p>
-      </div>
-      <div class="paragraph-block">
-        <div class="paragraph-block__border"></div>
-        <p class="paragraph-block__content">Sieć Galerii Handlowych zarządzanych przez Auchan Schiver</p>
-      </div>
-     </div>
-   </div>
-   <div class="page-section">
-   <div class="banner banner--artists" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/artysci-background.png);">
-       <h5 class="headline headline--subtitle">Artyści i celebryci, z którymi mieliśmy przyjemność współpracować:</h5>
-       <div class="row row--medium-12">
-           <ul class="artists">
-             <li>Magda Gessler</li>
-             <li>Olivier Janiak</li>
-             <li>Anita Lipnicka</li>
-           </ul>
-           <ul class="artists">
-             <li>Grzegorz Turnau</li>
-             <li>Dawid Woliński</li>
-             <li>John Porter</li>
-           </ul>
-           <ul class="artists">
-             <li>Zbigniew Wodecki</li>
-             <li>Patrycja Kazadi</li>
-             <li>Mariusz Pudzianowski</li>
-           </ul>
-           <ul class="artists">
-             <li>Wojciech Cejrowski</li>
-             <li>Joanna Horodyńska</li>
-             <li>Karolina Malinowska</li>
-           </ul>
-           <ul class="artists">
-             <li>Justyna Steczkowska</li>
-             <li>Tomasz Jacyków</li>
-             <li>i wielu innych...</li>
-           </ul>
-     </div>
-     </div>
-     <div class="page-section">
-     <h5 class="headline headline--subtitle">Marki, które nam zaufały:</h5>
-     <div class="testimonials__logo-container">
-            <div class="testimonials__logo-item"><img src="./images/20479646_1578872805489120_9099902035367873852_n.png" /></div>
-            <div class="testimonials__logo-item"><img src="./images/centrum-handlowe-vivo-vivo-stalowa-wola-1701.jpg" /></div>
-            <div class="testimonials__logo-item"><img src="./images/galena-logo-www.png" /></div>
-            <div class="testimonials__logo-item"><img src="./images/galeria-pomorska.png" /></div>
-            <div class="testimonials__logo-item"><img src="./images/images (1).png" /></div>
-            <div class="testimonials__logo-item"><img src="./images/images.png" /></div>
-            <div class="testimonials__logo-item"><img src="./images/logo-3.png" /></div>
-            <div class="testimonials__logo-item"><img src="./images/pobrany plik.png" /></div>
-            <div class="testimonials__logo-item"><img src="./images/unnamed-4.jpg" /></div>
+        <?php endwhile ?>
+        <?php endif ?>
+    </div>
+    <div class="page-section page-section--medium-6">
+    <?php 
+     if(have_rows('motto')) :
+        while(have_rows('motto')) :the_row();
+        $img = get_sub_field('image');
+        $quote = get_sub_field('quote');
+        $author = get_sub_field('author');
+        if($img) :
+            $full = $img['url'];
+            $mobile= $img['sizes']['mottoMobile']; 
+    ?>
+    <picture>
+        <source data-srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" media="(min-width: 600px)">
+        <img class="lazyload" data-src="<?php echo esc_url($mobile)?>" alt="<?php echo esc_attr($alt)?>">
+    </picture>
+    <?php endif ?>
+        <div class="page-section__yellow-col">
+            <div data-aos="fade-left" class="quotes">
+            <div class="quotes__quotation"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/quotation.png" alt="quotation icon" /></div>
+                <div class="quotes__content">
+                    <p class="qutes__text"><?php echo $quote ?></p>
+                    <p class="quotes__author"><?php echo $author ?></p>
+                </div>
+            </div>
         </div>
-     </div>
-   </div>
+    </div>
+    <?php endwhile ?>
+    <?php endif ?>
+    </div>
+    <div class="page-section page-section--border">
+        <div class="about">
+            <div class="wrapper">
+                <h2 data-aos="fade-up"  class="headline headline--medium">O nas</h2>
+                <p data-aos="fade-up"  class="main-content"><?php the_field('about') ?></p>
 
-   
+                    <?php get_template_part('template-parts/content', 'features');?>
 
+                <a href="<?php echo site_url('/o-nas'); ?>" class="btn">Czytaj więcej</a>
+            </div>
+        </div>
+    </div>
+    <div class="page-section page-section--border page-section--gradient-bgc">
+    <?php
+        portfolioCarousel();
+
+        ?>
+        </div>
+    </div>
+    <div class="page-section">
+    <div class="testimonials-container">
+        <div class="testimonials">
+            <div data-aos="fade-up" class="testimonials__slider">
+                <h2 class="headline headline--medium headline--overlap">Opinie klientów</h2>
+                <div class="testimonials__slides-container">
+                <?php
+              $testimonialsSlider = new WP_Query(array(
+                  'posts_per_page' => 6,
+                  'post_type' => 'Referencje'
+              ));
+
+              while ($testimonialsSlider ->have_posts()) {
+                $testimonialsSlider ->the_post();  
+                get_template_part('template-parts/content', 'testimonial');      
+             } wp_reset_postdata();
+              ?>
+                </div>
+            </div>
+            </div>
+       </div>
+    <?php
+       get_template_part('template-parts/content', 'logotypes');
+       ?>  
+        </div>
+       
+    </div>
+</div>
     <?php get_footer();
 
     ?>
-
-    

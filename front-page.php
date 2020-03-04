@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <?php 
   if(have_rows('hero')) :
     while(have_rows('hero')) :the_row();

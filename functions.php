@@ -84,6 +84,17 @@ function mb_studio_src(){
     }
 
     add_action('after_setup_theme', 'mb_studio_features');
+    
+    //remove p tags cf7
+    add_filter('wpcf7_autop_or_not', '__return_false');
 
+    /*Contact form 7 remove span*/
+    add_filter('wpcf7_form_elements', function($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+
+    $content = str_replace('<br />', '', $content);
+        
+    return $content;
+});
     
 ?>

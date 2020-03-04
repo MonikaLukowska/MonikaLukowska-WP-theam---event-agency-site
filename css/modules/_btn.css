@@ -1,15 +1,16 @@
 .btn {
     background-color: $mainYellow;
     text-decoration: none;
-    padding: 1em 1.5em;
+    padding: 1.1em 2em;
     display: inline-block;
-    border-radius: 2rem;
+    border-radius: 3rem;
     text-transform: uppercase;
-    font-size:0.9rem;
+    font-size: 0.9rem;
     font-weight: 500;
     font-family: 'Archivo-Bold', sans-serif;
     border-style: none;
-    cursor:pointer;
+    letter-spacing: 1.6px;
+    cursor: pointer;
 
     &:after {
         padding: 10px;
@@ -18,7 +19,7 @@
     }
 
     @mixin atMedium {
-        padding: 1.1rem 1.7rem;
+        padding: 1.4rem 2.3rem;
         font-size: 1.11rem;
     }
 
@@ -31,36 +32,127 @@
     }
 
     &--half-radius {
-        padding: 1em 1.5em;
-        border-radius:2rem;
-        width:100%;
-        margin:0 auto;
 
-        @mixin atLarge{
-        border-radius: 0 2rem 2rem 0;
-        width:50%;
+        width: 100%;
+        margin: 0 auto;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+
+
+        @mixin atLarge {
+            border-radius: 0 3rem 3rem 0;
+            width: 45%;
+            justify-content: flex-start;
+
         }
     }
 
-    &--up{
-        display:none;
+    &--half-radius-left {
+        background-color: #fff;
+        margin-bottom: 1em;
+        font-size: 0.7rem;
+        text-align: center;
+        border: 0;
+        line-height:3.4;
         
-        @mixin atMedium{
-        display:block;
-        position:absolute;
-        bottom:30px;
-        right:30px;
-        width:4.3em;
-        height:4.3em;
-        margin-bottom:1.5em;
-        border-radius:50%;
-        margin-bottom:0;
+
+
+        &::placeholder {
+            font-size: 0.9rem;
+            overflow: visible;
+           
+
+
+            @mixin atMedium {
+                font-size: 1.11rem;
+
+            }
+        }
+
+        @mixin atMedium {
+            line-height:2.9;
+        }
+
+        @mixin atLarge {
+            display: inline-block;
+            width: 55%;
+            border-radius: 3rem 0 0 3rem;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+    }
+
+    &--up {
+        display: none;
+
+        @mixin atMedium {
+            padding: 1.1rem 1.7rem;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 4.3em;
+            height: 4.3em;
+            margin-bottom: 1.5em;
+            border-radius: 50%;
+            margin-bottom: 0;
+
+
         }
 
         &:after {
-        padding: 0;
-        content: "";
+            padding: 0;
+            content: "";
+            text-decoration: none;
+        }
+    }
+
+    &--form {
+        background-color: $mainYellow;
         text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 500;
+        font-family: 'Archivo-Bold', sans-serif;
+        border-style: none;
+        letter-spacing: 1.6px;
+        cursor: pointer;
+        padding:0;
+        margin:0;
+        
+
+
+        @mixin atMedium {
+
+            font-size: 1.11rem;
+        }
     }
-    }
+}
+input[type="email"]::-webkit-input-placeholder  {
+  text-transform:uppercase;
+}
+input[type="email"]:-moz-placeholder{
+  text-transform:uppercase;  
+}
+input[type="email"]:focus:-moz-placeholder  {
+  opacity: 0;
+}
+input[type="email"]::-moz-placeholder{
+  text-transform:uppercase;  
+}
+input[type="email"]:focus::-moz-placeholder  {
+  opacity: 0;
+}
+input[type="email"]:focus::-webkit-input-placeholder  {
+  opacity: 0;
+}
+
+input[type="email"]  {
+  text-transform:lowercase;
 }

@@ -1,124 +1,184 @@
 .footer {
-  padding:0 1.25em;
+  position: relative;
+  padding: 0 1.25em;
   line-height: 2;
 
   &__upper {
-    padding:1.25em;
+    padding: 1.25em;
     background-color: $mainBlue;
-    min-height:100vh;
-    display:flex;
-        align-items:center;
-        align-content:center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
 
-    @mixin atSmall{
+    @mixin atSmall {
       padding: 4rem 0;
-      min-height:auto;
-      max-height:800px;
+      min-height: auto;
+      max-height: 800px;
     }
 
-    @mixin atMedium{
-      padding:0 1.25em;
-      
+    @mixin atMedium {
+      padding: 2em 1.25em;
+
     }
   }
 
+  div#wpcf7-f397-o1 {
+    width: 100%;
+
+    @mixin atSmall {
+      max-width: 80%;
+    }
+
+
+  }
+
   &__form {
-    width:100%;
+    margin: 0 auto;
+    width: 320px;
     display: flex;
-    flex-direction:column;
-    justify-content:space-between;
+    flex-direction: column;
+    justify-content: space-between;
 
-      @mixin atSmall{
-        max-width:80%;
+
+
+    .wpc7-submit {
+
+      &:after {
+        padding: 10px;
+        content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+        text-decoration: line-through;
       }
-   
+    }
 
-      &>input{
-        text-align:center;
-     
-      }
-    
+    div.wpcf7-response-output {
+      margin: 0;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      background-color: $mainBlue;
+      text-align: center;
+      z-index: 10;
 
-    @mixin atLarge{
-      flex-direction:row;
+    }
 
-       &>input{
-        text-align:center;
-       width:50%;
-      }
+
+    @mixin atLarge {
+      width: 527px;
+      flex-direction: row;
     }
   }
 
   &__input {
+    width: 100%;
     display: block;
     border-style: none;
     border-radius: 2rem;
     padding: 1em 4em;
-    margin-bottom:1em;
-    color:#959595;
+    margin-bottom: 1em;
+    color: #959595;
     font-family: "Archivo-Regular", sans-serif;
-    letter-spacing:1.5px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    font-size:0.9rem;
+    font-size: 0.9rem;
+    text-align: center;
 
-      
-       @mixin atMedium{
-       font-size:1.11rem; 
-      }
 
-        @mixin atLarge{
-          border-radius: 2rem 0 0 2rem;
-          padding: 0 0 0 2.5em;
-          margin-bottom:0;
-     
-        }
+    @mixin atMedium {
+      font-size: 1.11rem;
+    }
+
+    @mixin atLarge {
+      border-radius: 2rem 0 0 2rem;
+      padding: 0 0 0 2.5em;
+      margin-bottom: 0;
+      text-align: center;
+
+
+    }
   }
-  &__logo{
-    display:none;
 
-      @mixin atMedium{
-        display:block;
-        width:470px;
-      }
+  &__logo {
+    display: none;
+
+    @mixin atMedium {
+      display: block;
+      width: 470px;
+    }
   }
+
   &__logo>img {
     max-width: 20em;
     height: 100px;
     display: block;
   }
 
-  &__addres{
-    margin-top:2em;
-    padding-bottom:1em;
-    color:#555555;
+  &__addres {
+    margin-top: 2em;
+    padding-bottom: 1em;
+    color: #555555;
     font-family: "Archivo-Regular", sans-serif;
     font-size: 1.125rem;
     border-bottom: solid 2px $mainBlue;
-    
 
-    @mixin atMedium{
-      margin-top:auto;
+
+    @mixin atMedium {
+      margin-top: auto;
       padding-bottom: auto;
-      border-style:none;
+      border-style: none;
     }
 
-    >a{
-      color:#494848;
+    >a {
+      color: #494848;
 
-      
+
     }
 
-    >p{
-      padding:0;
+    >p {
+      padding: 0;
     }
   }
 
-  &--border-top{
+  &--border-top {
     border: solid 2px #ddd;
   }
-&__lower{
-  max-height:600px;
-  position:relative;
+
+  &__lower {
+    max-height: 600px;
+    position: relative;
+  }
+  &__socials{
+    display:flex;
+    justify-content: flex-start;
+
+    >a:nth-last-child(2){
+      margin-right:20px;
+    }
+  }
+
 }
+
+.wpcf7-form.footer__form>a {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+
+  @mixin atLarge {
+    width: 527px;
+    flex-direction: row;
+  }
+
+}
+div.footer__form>a {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+
+  @mixin atLarge {
+    width: 527px;
+    flex-direction: row;
+  }
 
 }
