@@ -7,11 +7,12 @@
 get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
+
 <div class="page-section page-section--border">
 <div class="banner banner--tall">
   <picture class="bgc">
   <?php 
-       $banner = get_field('banner');
+       $banner = get_field('bgc');
           if($banner):
           $alt = $banner['alt']; 
           $url = $banner['url'];
@@ -19,12 +20,13 @@ get_header(); ?>
           $medium = $banner['sizes']['bannerMedium'];
           $mobile = $banner['sizes']['bannerMobile'];
           ?>
+           <source  media="(min-width: 1500px)" srcset="<?php echo esc_url($url)?>" alt="<?php echo esc_attr($alt)?>" />
             <source  media="(min-width: 900px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
             <source  media="(min-width: 530px)" srcset="<?php echo esc_url($medium)?>" alt="<?php echo esc_attr($alt)?>" />
             <img src="<?php echo esc_url($mobile)?>" alt="<?php esc_attr($mobile)?>"/>
             <?php endif ?>
          </picture> 
-            <div class="contact">
+           <div class="contact">
               <h2   class="headline headline--medium headline--overlap"><?php the_field('page-title') ?></h2>
               <div class="contact__details">
             <?php 

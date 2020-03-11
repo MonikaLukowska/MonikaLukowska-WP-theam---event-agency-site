@@ -16,10 +16,12 @@
             <?php
             $img = $slide1['image'];
             if($img):
+            $url = $img['url'];
             $full = $img['sizes']['bannerFull'];
             $medium= $img['sizes']['bannerMedium'];
             $mobile = $img['sizes']['bannerMobile'];
             ?>
+            <source  media="(min-width: 1500px)" srcset="<?php echo esc_url($url)?>" alt="<?php echo esc_attr($alt)?>" />
             <source  media="(min-width: 900px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
             <source  media="(min-width: 530px)" srcset="<?php echo esc_url($medium)?>" alt="<?php echo esc_attr($alt)?>" />
             <img src="<?php echo esc_url($mobile)?>" alt="<?php esc_attr($mobile)?>"/>
@@ -40,10 +42,12 @@
             <?php
             $img = $slide2['image'];
             if($img):
+            $url = $img['url'];
             $full = $img['sizes']['bannerFull'];
             $medium= $img['sizes']['bannerMedium'];
             $mobile = $img['sizes']['bannerMobile'];
             ?>
+            <source  media="(min-width: 1500px)" srcset="<?php echo esc_url($url)?>" alt="<?php echo esc_attr($alt)?>" />
             <source  media="(min-width: 900px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
             <source  media="(min-width: 530px)" srcset="<?php echo esc_url($medium)?>" alt="<?php echo esc_attr($alt)?>" />
             <img src="<?php echo esc_url($mobile)?>" alt="<?php esc_attr($mobile)?>"/>
@@ -62,10 +66,12 @@
             <?php
             $img = $slide3['image'];
             if($img):
+            $url = $img['url'];
             $full = $img['sizes']['bannerFull'];
             $medium= $img['sizes']['bannerMedium'];
             $mobile = $img['sizes']['bannerMobile'];
             ?>
+            <source  media="(min-width: 1500px)" srcset="<?php echo esc_url($url)?>" alt="<?php echo esc_attr($alt)?>" />
             <source  media="(min-width: 900px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
             <source  media="(min-width: 530px)" srcset="<?php echo esc_url($medium)?>" alt="<?php echo esc_attr($alt)?>" />
             <img src="<?php echo esc_url($mobile)?>" alt="<?php esc_attr($mobile)?>"/>
