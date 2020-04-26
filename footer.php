@@ -14,7 +14,7 @@
         </div>
         <div class="footer footer__lower">
             <div class="row row--medium-4 row--start">
-                <div class="footer__logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/studio_logo_sm.png" alt="logo studio mb"></div>
+                <div class="footer__logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/studio_logo_sm.png" alt="Studio MB"></div>
                 <div class="footer__addres">
                     <p>Studio MB<br> ul. Gdańska 27, I piętro<br>85-005 Bydgoszcz<br><a href="mailto:biuro@studiomb.pl">biuro@studiomb.pl<a></p>
                     <div class="footer__socials">

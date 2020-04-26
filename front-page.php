@@ -147,11 +147,11 @@
     <?php endif ?>
         <div class="page-section__yellow-col">
             <div data-aos="fade-left" class="quotes">
-            <div class="quotes__quotation"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/quotation.png" alt="quotation icon" /></div>
-                <div class="quotes__content">
+            <div class="quotes__quotation"><img aria-hidden="true" src="<?php echo get_stylesheet_directory_uri(); ?>/images/quotation.png" alt="" /></div>
+                <blockqute  class="quotes__content">
                     <p class="qutes__text"><?php echo $quote ?></p>
-                    <p class="quotes__author"><?php echo $author ?></p>
-                </div>
+                    <cite class="quotes__author"><?php echo $author ?></cite>
+                </blockqute>
             </div>
         </div>
     </div>

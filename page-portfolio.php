@@ -18,7 +18,9 @@ get_header(); ?>
    <div class="gallery">
    <?php
           $eventCarousel = new WP_Query(array(
-            'post_type' => 'Event'
+            'post_type' => 'Event',
+            'posts_per_page' => 99,
+
           ));
 
           while ($eventCarousel->have_posts()) {

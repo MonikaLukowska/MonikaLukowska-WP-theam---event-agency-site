@@ -2,11 +2,11 @@
     if($text) :?>
 
 <div class="testimonials__slide">
-                        <div class="quotes quotes--column">
-                            <div class="quotes__quotation"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/quotation.png" alt="quotation icon" /></div>
+                        <blockquote class="quotes quotes--column">
+                            <div class="quotes__quotation"><img aria-hidden="true" src="<?php echo get_stylesheet_directory_uri(); ?>/images/quotation.png" alt="" /></div>
                             <p class="quotes__text-content" ><?php strip_tags(the_field('content')) ?></p>
-                            <p class="quotes__author--center"><?php the_field('author') ?></p>
-                        </div>
+                            <cite class="quotes__author--center"><?php the_field('author') ?></cite>
+                        </blockquote>
                     </div>
 <?php else: ?>
 <div class="testimonials__slide">

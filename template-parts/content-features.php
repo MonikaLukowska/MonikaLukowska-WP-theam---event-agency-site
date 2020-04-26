@@ -9,15 +9,15 @@
               ?>
 
                     <div data-aos="fade-right" class="feature-block">
-                        <img src="<?php echo $feature1['icon']; ?>" alt="ikona o nas1" >
+                        <img aria-hidden="true" src="<?php echo $feature1['icon']; ?>" alt="" >
                         <p class="feature-block__desc"><?php echo $feature1['description']; ?></p>
                     </div>
                     <div data-aos="fade-up" class="feature-block">
-                        <img src="<?php echo $feature2['icon']; ?>"  alt="ikona o nas2">
+                        <img aria-hidden="true" src="<?php echo $feature2['icon']; ?>"  alt="">
                         <p class="feature-block__desc"><?php echo $feature2['description']; ?></p>
                     </div>
                     <div data-aos="fade-left" class="feature-block">
-                        <img src="<?php echo $feature3['icon']; ?>" alt="ikona o nas 3">
+                        <img aria-hidden="true" src="<?php echo $feature3['icon']; ?>" alt="">
                         <p class="feature-block__desc"><?php echo $feature3['description']; ?></p>
                     </div>
                     <?php endwhile ?>

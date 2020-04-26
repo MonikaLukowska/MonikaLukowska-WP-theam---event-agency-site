@@ -24,7 +24,6 @@
   }
 
   div#wpcf7-f397-o1 {
-    width: 100%;
 
     @mixin atSmall {
       max-width: 80%;
@@ -149,12 +148,13 @@
     max-height: 600px;
     position: relative;
   }
-  &__socials{
-    display:flex;
+
+  &__socials {
+    display: flex;
     justify-content: flex-start;
 
-    >a:nth-last-child(2){
-      margin-right:20px;
+    >a:nth-last-child(2) {
+      margin-right: 20px;
     }
   }
 
@@ -171,6 +171,7 @@
   }
 
 }
+
 div.footer__form>a {
   display: flex;
   flex-direction: column;

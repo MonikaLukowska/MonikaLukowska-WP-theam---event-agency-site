@@ -25,7 +25,7 @@
                         <div class="site-header__menu-icon__middle"></div>
                         
                     </div>
-                    <div class="site-header__logo-mobile"><a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/studio_logo_sm.png" alt="logo studion MB" /></a></div>
+                    <div class="site-header__logo-mobile"><a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/studio_logo_sm.png" alt="Studio MB" /></a></div>
                     <div class="site-header__content" id="site-header__content">
                         <nav class="navigation">
                         <!-- <?php 
