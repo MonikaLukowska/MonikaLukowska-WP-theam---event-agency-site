@@ -17,6 +17,7 @@
             $full = $img['sizes']['bannerFull'];
             $medium= $img['sizes']['bannerMedium'];
             $mobile = $img['sizes']['bannerMobile'];
+            
             ?>
             <source  media="(min-width: 900px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
             <source  media="(min-width: 530px)" srcset="<?php echo esc_url($medium)?>" alt="<?php echo esc_attr($alt)?>" />

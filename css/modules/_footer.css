@@ -19,17 +19,13 @@
 
     @mixin atMedium {
       padding: 2em 1.25em;
-
     }
   }
 
   div#wpcf7-f397-o1 {
-
     @mixin atSmall {
       max-width: 80%;
     }
-
-
   }
 
   &__form {
@@ -39,10 +35,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-
-
     .wpc7-submit {
-
       &:after {
         padding: 10px;
         content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
@@ -60,9 +53,7 @@
       background-color: $mainBlue;
       text-align: center;
       z-index: 10;
-
     }
-
 
     @mixin atLarge {
       width: 527px;
@@ -84,7 +75,6 @@
     font-size: 0.9rem;
     text-align: center;
 
-
     @mixin atMedium {
       font-size: 1.11rem;
     }
@@ -94,8 +84,6 @@
       padding: 0 0 0 2.5em;
       margin-bottom: 0;
       text-align: center;
-
-
     }
   }
 
@@ -108,7 +96,7 @@
     }
   }
 
-  &__logo>img {
+  &__logo > img {
     max-width: 20em;
     height: 100px;
     display: block;
@@ -122,20 +110,17 @@
     font-size: 1.125rem;
     border-bottom: solid 2px $mainBlue;
 
-
     @mixin atMedium {
       margin-top: auto;
       padding-bottom: auto;
       border-style: none;
     }
 
-    >a {
+    > a {
       color: #494848;
-
-
     }
 
-    >p {
+    > p {
       padding: 0;
     }
   }
@@ -153,14 +138,13 @@
     display: flex;
     justify-content: flex-start;
 
-    >a:nth-last-child(2) {
+    > a:nth-last-child(2) {
       margin-right: 20px;
     }
   }
-
 }
 
-.wpcf7-form.footer__form>a {
+.wpcf7-form.footer__form > a {
   display: flex;
   flex-direction: column;
   width: 320px;
@@ -169,10 +153,9 @@
     width: 527px;
     flex-direction: row;
   }
-
 }
 
-div.footer__form>a {
+div.footer__form > a {
   display: flex;
   flex-direction: column;
   width: 320px;
@@ -181,5 +164,4 @@ div.footer__form>a {
     width: 527px;
     flex-direction: row;
   }
-
 }

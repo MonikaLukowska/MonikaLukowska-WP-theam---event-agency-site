@@ -70,6 +70,7 @@ function mb_studio_src(){
     wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Palanquin|Roboto&display=swap');
     wp_enqueue_script('font-awesome', '//kit.fontawesome.com/56d84fb067.js');
     wp_enqueue_style('main_styles', get_stylesheet_uri(), NULL, microtime());
+    if ( !is_admin() ) wp_deregister_script('jquery');
 }
     add_action('wp_enqueue_scripts', 'mb_studio_src');
 //add page title in the browser; enable menu customization

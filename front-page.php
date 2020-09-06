@@ -6,27 +6,31 @@
     $slide1 = get_sub_field('slide1');
     $slide2 = get_sub_field('slide2');
     $slide3 = get_sub_field('slide3');
-
+   
 ?>
 
 <div class="hero-slider">
         <div class="hero-slider__container">
             <div class="hero-slider__slide hero-slider__slide--1">
               <picture>
-            <?php
+            <?php      
             $img = $slide1['image'];
             if($img):
             $url = $img['url'];
             $full = $img['sizes']['bannerFull'];
-            $medium= $img['sizes']['bannerMedium'];
-            $mobile = $img['sizes']['bannerMobile'];
+            $alt = $img['alt']; 
+            $mob = $slide1['mobile'];
+            $mobimg = $mob['sizes']['bannerFull'];
+            $altm = $mob['alt']; 
+            
             ?>
             <source  media="(min-width: 1500px)" srcset="<?php echo esc_url($url)?>" alt="<?php echo esc_attr($alt)?>" />
-            <source  media="(min-width: 900px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
-            <source  media="(min-width: 530px)" srcset="<?php echo esc_url($medium)?>" alt="<?php echo esc_attr($alt)?>" />
-            <img src="<?php echo esc_url($mobile)?>" alt="<?php esc_attr($mobile)?>"/>
+            <source  media="(min-width: 1030px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
+            <img src="<?php echo esc_url($mobimg)?>" alt="<?php echo esc_attr($altm)?>"/>
               
-            <?php endif ?>
+            <?php endif;
+            ?>
+        
              </picture>
                 <div class="hero-slider__overlay container">
                     <div class="hero-slider__text-content">
@@ -42,17 +46,20 @@
             <?php
             $img = $slide2['image'];
             if($img):
-            $url = $img['url'];
-            $full = $img['sizes']['bannerFull'];
-            $medium= $img['sizes']['bannerMedium'];
-            $mobile = $img['sizes']['bannerMobile'];
+                $url = $img['url'];
+                $full = $img['sizes']['bannerFull'];
+                $alt = $img['alt']; 
+    
+                $mob = $slide2['mobile'];
+                $mobimg = $mob['sizes']['bannerFull'];
+                $altm = $mob['alt']; 
             ?>
-            <source  media="(min-width: 1500px)" srcset="<?php echo esc_url($url)?>" alt="<?php echo esc_attr($alt)?>" />
-            <source  media="(min-width: 900px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
-            <source  media="(min-width: 530px)" srcset="<?php echo esc_url($medium)?>" alt="<?php echo esc_attr($alt)?>" />
-            <img src="<?php echo esc_url($mobile)?>" alt="<?php esc_attr($mobile)?>"/>
+           <source  media="(min-width: 1500px)" srcset="<?php echo esc_url($url)?>" alt="<?php echo esc_attr($alt)?>" />
+            <source  media="(min-width: 1030px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
+            <img src="<?php echo esc_url($mobimg)?>" alt="<?php echo esc_attr($altm)?>"/>
               
-            <?php endif ?>
+            <?php endif;
+            ?>
              </picture>
                 <div class="hero-slider__overlay container">
                     <div class="hero-slider__text-content">
@@ -66,17 +73,21 @@
             <?php
             $img = $slide3['image'];
             if($img):
-            $url = $img['url'];
-            $full = $img['sizes']['bannerFull'];
-            $medium= $img['sizes']['bannerMedium'];
-            $mobile = $img['sizes']['bannerMobile'];
+                $url = $img['url'];
+                $full = $img['sizes']['bannerFull'];
+                $alt = $img['alt']; 
+  
+                $mob = $slide3['mobile'];
+                $mobimg = $mob['sizes']['bannerFull'];
+                $altm = $mob['alt']; 
+                print_r($slide3['mobile']);
             ?>
-            <source  media="(min-width: 1500px)" srcset="<?php echo esc_url($url)?>" alt="<?php echo esc_attr($alt)?>" />
-            <source  media="(min-width: 900px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
-            <source  media="(min-width: 530px)" srcset="<?php echo esc_url($medium)?>" alt="<?php echo esc_attr($alt)?>" />
-            <img src="<?php echo esc_url($mobile)?>" alt="<?php esc_attr($mobile)?>"/>
+           <source  media="(min-width: 1500px)" srcset="<?php echo esc_url($url)?>" alt="<?php echo esc_attr($alt)?>" />
+            <source  media="(min-width: 1030px)" srcset="<?php echo esc_url($full)?>" alt="<?php echo esc_attr($alt)?>" />
+            <img src="<?php echo esc_url($mobimg)?>" alt="<?php echo esc_attr($altm)?>"/>
               
-            <?php endif ?>
+            <?php endif;
+            ?>
              </picture>
                 <div class="hero-slider__overlay container">
                     <div class="hero-slider__text-content">

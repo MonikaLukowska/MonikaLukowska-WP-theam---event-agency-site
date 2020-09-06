@@ -1,85 +1,75 @@
 .image-text-block-section {
+  display: flex;
+  flex-direction: column;
+
+  @mixin atSmall {
+    max-width: 29rem;
+    margin: 0 auto;
+  }
+
+  @mixin atMedium {
+    max-width: 86rem;
+    margin: 0 1rem 2rem;
+  }
+
+  &__block {
     display: flex;
     flex-direction: column;
-
-    @mixin atSmall {
-        max-width: 29rem;
-        margin: 0 auto;
-    }
+    margin: 2rem 0;
 
     @mixin atMedium {
-        max-width: 86rem;
-        margin: 0 1rem 2rem;
+      flex-direction: row;
+      justify-content: space-between;
     }
 
+    &__content {
+      flex: 0 1 45%;
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
 
-    &__block {
-        display: flex;
-        flex-direction: column;
-        margin: 2rem 0;
+      @mixin atMedium {
+        margin: 0 1rem;
+      }
+    }
+
+    &__img {
+      flex: 0 1 45%;
+      &--none-md {
+        @mixin atMedium {
+          display: none;
+        }
+      }
+
+      &--none-sm {
+        display: none;
 
         @mixin atMedium {
-            flex-direction: row;
-            justify-content: space-between;
+          display: block;
+        }
+      }
+
+      > img {
+        width: 100%;
+        max-width: 35.65rem;
+        padding-top: 2.5rem;
+
+        @mixin atMedium {
+          padding-top: 8rem;
+          max-width: 384px;
         }
 
-
-        &__content {
-
-            flex: 0 0 50%;
-            display: flex;
-            flex-direction: column;
-            align-content: flex-start;
-
-            @mixin atMedium {
-                margin:0 1rem;
-            }
+        @mixin atLarge {
+          padding: 2.5em 2em;
+          max-width: 35.65rem;
         }
-
-        &__img {
-
-
-            &--none-md {
-                @mixin atMedium {
-                    display: none;
-                }
-            }
-
-            &--none-sm {
-                display: none;
-
-                @mixin atMedium {
-                    display: block;
-                }
-            }
-
-
-            >img {
-                width: 100%;
-                max-width: 35.65rem;
-                padding-top: 2.5rem;
-
-
-                @mixin atMedium {
-                    padding-top: 8rem;
-                    max-width: 384px;
-                }
-
-                @mixin atLarge {
-                    padding: 2.5em 2em;
-                    max-width: 35.65rem;
-                }
-            }
-        }
-
-        &--about {
-
-            @mixin atMedium {
-                align-items: center;
-            }
-        }
-
+      }
     }
 
-
+    &--about {
+      @mixin atMedium {
+        align-items: center;
+      }
+    }
+  }
 }

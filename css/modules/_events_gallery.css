@@ -1,5 +1,4 @@
 .gallery {
-
   min-height: 100vh;
   width: 100%;
   max-width: 1920px;
@@ -10,36 +9,26 @@
   grid-row-gap: 5px;
   overflow: hidden;
 
-
-
-
   @mixin atSmall {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-auto-rows: 320px
+    grid-auto-rows: 320px;
   }
 
   @mixin atMedium {
-
     grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
     grid-auto-rows: 330px;
     grid-gap: 5px;
     grid-auto-flow: dense;
 
-
-
     &__event:nth-child(1) {
       grid-column-end: span 2;
       grid-row-end: span 2;
-
     }
 
     &__event:nth-child(2) {
       grid-column-end: span 2;
-
     }
-
   }
-
 
   &__event {
     overflow: hidden;
@@ -50,13 +39,10 @@
       transition: all 1s;
     }
 
-
-
-    >figure {
+    > figure {
       margin: 0;
 
-
-      >img {
+      > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -64,34 +50,30 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%)
+        transform: translate(-50%, -50%);
       }
 
-      >.overlay {
+      > .overlay {
         position: absolute;
         top: 0;
         left: 0;
         opacity: 0;
         height: 100%;
         width: 100%;
-        background-color: rgba(#FFE87E, 0.6);
+        background-color: rgba(#ffe87e, 0.6);
 
         z-index: 10;
 
-        >figcaption>p {
+        > figcaption > p {
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
           text-transform: uppercase;
-          color: #191C40;
-
+          color: #191c40;
         }
       }
-
     }
-
-
   }
 
   &--singiel {
@@ -102,69 +84,52 @@
 
     overflow: hidden;
 
-
     @mixin atSmall {
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-
-
     }
 
     @mixin atMedium {
-
       grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 
       grid-gap: 5px;
       grid-auto-flow: dense;
     }
 
-    >a {
+    > a {
       overflow: hidden;
       position: relative;
 
-      >img {
+      > img {
         min-width: 100%;
         min-height: 100%;
         object-fit: cover;
         object-position: 50% 50%;
         margin: 0;
-        /* position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%)*/
       }
-
     }
-
-
-
-
-    /*display:block;
-      width:100%;
-      
-      @mixin atMedium{
-
-        >p{
-       
-        line-height: 0;
-   
-  -webkit-column-count: 3;
-  -webkit-column-gap:   5px;
-  -moz-column-count:    3;
-  -moz-column-gap:      5px;
-  column-count:       3;
-  column-gap:           5px; 
-
-          >img.alignnone{
-           width: 100% !important;
-  height: auto !important;
-          }
-        }
-         
-  }*/
   }
-
+  &--videos{
+    min-height: auto;
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+   
+    &__video{
+      display:flex;
+      justify-content: center;
+     
+    
+      >iframe {
+       @mixin atMedium {
+         width:100%;
+        min-height: 450px;
+    }
+      }
+    }
+  }
 }
 
+//lightbox
 #lightbox.lightbox {
   position: fixed;
   top: 50% !important;
@@ -175,7 +140,6 @@
 .lightboxOverlay {
   opacity: 0.96;
   max-width: 100vw !important;
-
 }
 
 .lb-container {
@@ -187,15 +151,12 @@
   max-height: 730px;
   margin: 0 auto;
 
-
-  >.lb-image {
+  > .lb-image {
     /* max-height: 730px !important;*/
     max-width: 1050px;
     max-height: 730px;
     object-fit: cover;
     object-position: 50% 50%;
-
-
   }
 }
 
@@ -203,10 +164,7 @@
   background-color: transparent;
   max-width: 1050px;
   max-height: 730px;
-
 }
-
-
 
 .lb-nav a.lb-next {
   position: absolute;
@@ -217,7 +175,6 @@
   right: 0;
   transform: translateY(-50%);
 
-
   @mixin atMedium {
     max-height: 38px;
     max-width: 52px;
@@ -226,8 +183,6 @@
     background: url("./images/next.png");
     background-repeat: no-repeat;
   }
-
-
 }
 
 .lb-nav a.lb-prev {
@@ -247,15 +202,12 @@
     transform: translateX(-100%);
     background: url("./images/prev.png");
     background-repeat: no-repeat;
-
   }
-
 }
 
 .lb-dataContainer {
   position: relative;
   height: 100%;
-
 
   .lb-data {
     width: 100%;
@@ -264,7 +216,6 @@
 
 .lb-details {
   text-transform: uppercase;
-
 
   .lb-caption {
     line-height: 2;
@@ -276,8 +227,6 @@
     position: absolute;
     right: 0;
   }
-
-
 }
 
 /*.lb-data .lb-close {
@@ -288,3 +237,12 @@
   right: 0;
   transform: translateY(-100%);
 }*/
+.gallery--singiel__videos{
+  max-width: 1400px;
+  margin: 50px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.gallery--singiel__video {
+      
+}
