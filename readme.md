@@ -6,6 +6,6 @@ Project main goal was to practice WP custom themes building, basing on psd proje
 
 # Screenshot
 
-![Alt text](wp-content/themes/MB_studio/images/page.png?raw=true)
+![Alt text](images/page.png?raw=true)
 
 [DEMO](http://studiomb.pl/)
